@@ -269,7 +269,8 @@
     var a = el('a', { href: src, target: '_blank', rel: 'noopener' });
     var img = el('img', { src: src, alt: room.name + ' — ' + label, loading: 'lazy', decoding: 'async' });
     img.onerror = function () {
-      box.innerHTML = '<div class="pending"><strong>' + (key === 'before' ? 'Photo pending' : 'Mockup pending') + '</strong>' + esc(label) + '</div>';
+      // No visualization for this package yet: show the scope list only, no placeholder.
+      box.remove();
     };
     a.appendChild(img); box.appendChild(a);
     return box;
