@@ -259,25 +259,26 @@
       .table-scroll { overflow: visible; }
       table.cmp { min-width: 0; }
     }
-    /* Before / after */
-    .ba-list { display: grid; gap: 56px; }
-    .ba { display: grid; gap: 28px; align-items: start; }
-    @media (min-width: 960px) { .ba { grid-template-columns: 1.15fr .85fr; } .ba:nth-child(even) .ba-figure { order: 2; } }
-    .ba-figure { margin: 0; }
-    .ba-frame { position: relative; aspect-ratio: 3 / 4; overflow: hidden; border: 1px solid var(--gray); background: var(--gray); touch-action: pan-y; user-select: none; }
-    .ba-frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
-    .ba-frame .after { clip-path: inset(0 0 0 var(--pos, 50%)); }
-    .ba-handle { position: absolute; top: 0; bottom: 0; left: var(--pos, 50%); width: 2px; margin-left: -1px; background: #fff; box-shadow: 0 0 0 1px rgba(16,42,67,.25); pointer-events: none; }
-    .ba-handle::after { content: "\2194"; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 40px; height: 40px; border-radius: 50%; background: var(--navy); color: #fff; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; font-size: 18px; }
-    .ba-tag { position: absolute; top: 12px; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; padding: 5px 10px; background: rgba(16,42,67,.82); color: #fff; pointer-events: none; }
-    .ba-tag.l { left: 12px; } .ba-tag.r { right: 12px; background: var(--gold); color: var(--navy); }
-    .ba-range { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
-    .ba-cap { font-size: 12px; color: var(--muted); margin-top: 10px; }
-    .ba-body h3 { font-family: var(--head); color: var(--navy); font-size: 24px; margin-bottom: 14px; }
-    .ba-meta { list-style: none; border-top: 1px solid var(--gray); margin-top: 18px; }
-    .ba-meta li { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--gray); font-size: 14.5px; }
-    .ba-meta li span:first-child { color: var(--muted); }
-    .ba-meta li span:last-child { font-weight: 600; text-align: right; color: var(--charcoal); }
+    /* Package comparison by room */
+    .cmp-room { margin-top: 56px; }
+    .cmp-room:first-of-type { margin-top: 0; }
+    .cmp-room h3 { font-family: var(--head); color: var(--navy); font-size: 22px; text-transform: uppercase; letter-spacing: .06em; padding-bottom: 12px; border-bottom: 1px solid var(--gold); margin-bottom: 18px; }
+    .cmp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    @media (min-width: 560px) { .cmp-grid { gap: 16px; } }
+    @media (max-width: 559px) { .cmp-card .hd { flex-direction: column; gap: 2px; padding: 10px; } .cmp-card .hd b { font-size: 11px; letter-spacing: .14em; } .cmp-card ul { padding: 10px; } .cmp-card li { font-size: 12.5px; padding-left: 14px; } .cmp-card li::before { width: 7px; height: 4px; top: 9px; } }
+    @media (min-width: 1040px) { .cmp-grid { grid-template-columns: repeat(4, 1fr); } }
+    .cmp-card { background: var(--white); border: 1px solid var(--gray); border-top: 3px solid var(--navy); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
+    .cmp-card.existing { border-top-color: var(--faint); }
+    .cmp-card.rec { border-color: var(--gold); border-top-color: var(--gold); }
+    .cmp-card .hd { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding: 12px 14px; }
+    .cmp-card .hd b { font-family: var(--head); font-size: 12px; letter-spacing: .2em; color: var(--navy); }
+    .cmp-card .hd span { font-family: var(--head); font-weight: 800; color: var(--navy); }
+    .cmp-card .hd small { display: block; font-size: 10px; letter-spacing: .16em; color: var(--gold); font-weight: 700; margin-top: 2px; }
+    .cmp-card img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; background: var(--gray); }
+    .cmp-card ul { list-style: none; margin: 0; padding: 12px 14px 14px; }
+    .cmp-card li { position: relative; padding: 3px 0 3px 18px; font-size: 14px; }
+    .cmp-card li::before { content: ""; position: absolute; left: 1px; top: 10px; width: 9px; height: 5px; border-left: 1.5px solid var(--gold); border-bottom: 1.5px solid var(--gold); transform: rotate(-45deg); }
+    .cmp-card.existing li::before { width: 8px; height: 1px; border: 0; background: var(--faint); transform: none; top: 13px; }
     /* Retainer viewer */
     button.btn { cursor: pointer; font: inherit; font-family: var(--head); font-weight: 700; font-size: 14px; letter-spacing: .06em; }
     .rv { position: fixed; inset: 0; z-index: 100; background: rgba(16,42,67,.96); display: none; flex-direction: column; }
@@ -709,121 +710,40 @@
     </div>
   </section>
 
-  <!-- BEFORE / AFTER -->
-  <section id="before-after">
+  <!-- PACKAGE COMPARISON BY ROOM -->
+  <section id="room-packages">
     <div class="wrap">
       <div class="sec-head">
-        <div class="eyebrow">Before &amp; after</div>
-        <h2>The actual house, before and after.</h2>
-        <p class="lede">Each view starts from a real photo of 717 Gaskill Ave and shows the recommended Investor package. Drag the handle to compare. These are conceptual visualizations of the proposed scope, not photos of completed work; the room-by-room plan for every package is in the <a href="mockups/">full gallery</a>.</p>
+        <div class="eyebrow">Room by room · by package</div>
+        <h2>What each package looks like in the actual house.</h2>
+        <p class="lede">Existing is the real photo. The three package views are conceptual visualizations made from that same photo, showing only work in each package's scope; final materials and colors are confirmed in writing before purchase. The <a href="mockups/">full gallery</a> covers every room.</p>
       </div>
-      <div class="ba-list">
-        <article class="ba" data-ba>
-          <figure class="ba-figure">
-            <div class="ba-frame" style="--pos:50%">
-              <img class="before" src="mockups/img/living-room-before.jpg" alt="Living room — existing condition" loading="lazy" decoding="async">
-              <img class="after" src="mockups/img/living-room-investor.jpg" alt="Living room — proposed, Investor package (conceptual visualization)" loading="lazy" decoding="async">
-              <span class="ba-tag l">Existing</span><span class="ba-tag r">Proposed</span>
-              <span class="ba-handle" aria-hidden="true"></span>
-              <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Living room: slide to compare existing and proposed">
-            </div>
-            <figcaption class="ba-cap">Conceptual visualization from the actual photo. Final materials, colors and fixtures may vary and are confirmed in writing before purchase.</figcaption>
-          </figure>
-          <div class="ba-body">
-            <div class="eyebrow">Proposed · Investor package</div>
-            <h3>Living room</h3>
-            <ul class="ticks"><li>Full clean-out of belongings</li><li>Walls Agreeable Gray, ceiling flat white</li><li>Existing oak hardwood kept and cleaned</li><li>Extra White trim, simple light fixture, new cover plates</li></ul>
-            <ul class="ba-meta">
-              <li><span>Stays in place</span><span>Vaulted ceiling, oak hardwood, windows, room layout</span></li>
-              <li><span>Budget</span><span>Included in the whole-home package price — Investor $19,950 (Complete $16,450 · Premium $26,400)</span></li>
-              <li><span>Timeline</span><span>Within the ~4-week Investor target</span></li>
-            </ul>
-          </div>
-        </article>
-        <article class="ba" data-ba>
-          <figure class="ba-figure">
-            <div class="ba-frame" style="--pos:50%">
-              <img class="before" src="mockups/img/kitchen-before.jpg" alt="Kitchen — existing condition" loading="lazy" decoding="async">
-              <img class="after" src="mockups/img/kitchen-investor.jpg" alt="Kitchen — proposed, Investor package (conceptual visualization)" loading="lazy" decoding="async">
-              <span class="ba-tag l">Existing</span><span class="ba-tag r">Proposed</span>
-              <span class="ba-handle" aria-hidden="true"></span>
-              <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Kitchen: slide to compare existing and proposed">
-            </div>
-            <figcaption class="ba-cap">Conceptual visualization from the actual photo. Final materials, colors and fixtures may vary and are confirmed in writing before purchase.</figcaption>
-          </figure>
-          <div class="ba-body">
-            <div class="eyebrow">Proposed · Investor package</div>
-            <h3>Kitchen</h3>
-            <ul class="ticks"><li>Walls Agreeable Gray (purple removed)</li><li>Missing upper doors replaced; all cabinets repainted white</li><li>Matte black cabinet pulls</li><li>Crystal pendant removed; simple flush LED light centered on the ceiling</li><li>Clean-out of the room and counters</li></ul>
-            <ul class="ba-meta">
-              <li><span>Stays in place</span><span>Cabinet boxes and layout, countertop, tile floor, appliances, window</span></li>
-              <li><span>Budget</span><span>Included in the whole-home package price — Investor $19,950 (Complete $16,450 · Premium $26,400)</span></li>
-              <li><span>Timeline</span><span>Within the ~4-week Investor target</span></li>
-            </ul>
-          </div>
-        </article>
-        <article class="ba" data-ba>
-          <figure class="ba-figure">
-            <div class="ba-frame" style="--pos:50%">
-              <img class="before" src="mockups/img/full-bath-before.jpg" alt="Full bathroom — existing condition" loading="lazy" decoding="async">
-              <img class="after" src="mockups/img/full-bath-investor.jpg" alt="Full bathroom — proposed, Investor package (conceptual visualization)" loading="lazy" decoding="async">
-              <span class="ba-tag l">Existing</span><span class="ba-tag r">Proposed</span>
-              <span class="ba-handle" aria-hidden="true"></span>
-              <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Full bathroom: slide to compare existing and proposed">
-            </div>
-            <figcaption class="ba-cap">Conceptual visualization from the actual photo. Final materials, colors and fixtures may vary and are confirmed in writing before purchase.</figcaption>
-          </figure>
-          <div class="ba-body">
-            <div class="eyebrow">Proposed · Investor package</div>
-            <h3>Full bathroom</h3>
-            <ul class="ticks"><li>Walls Alabaster (blue removed)</li><li>Shower valve/cartridge repaired; pressure-balance trim</li><li>Plain white shower curtain on a new rod</li><li>Brushed-nickel faucet and accessories</li><li>Clean-out</li></ul>
-            <ul class="ba-meta">
-              <li><span>Stays in place</span><span>Tub/shower, pedestal sink, toilet, tile floor, mirror, window</span></li>
-              <li><span>Budget</span><span>Included in the whole-home package price — Investor $19,950 (Complete $16,450 · Premium $26,400)</span></li>
-              <li><span>Timeline</span><span>Within the ~4-week Investor target</span></li>
-            </ul>
-          </div>
-        </article>
-        <article class="ba" data-ba>
-          <figure class="ba-figure">
-            <div class="ba-frame" style="--pos:50%">
-              <img class="before" src="mockups/img/bedroom-3-before-ba.jpg" alt="Bedroom — existing condition" loading="lazy" decoding="async">
-              <img class="after" src="mockups/img/bedroom-3-investor.jpg" alt="Bedroom — proposed, Investor package (conceptual visualization)" loading="lazy" decoding="async">
-              <span class="ba-tag l">Existing</span><span class="ba-tag r">Proposed</span>
-              <span class="ba-handle" aria-hidden="true"></span>
-              <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Bedroom: slide to compare existing and proposed">
-            </div>
-            <figcaption class="ba-cap">Conceptual visualization from the actual photo. Final materials, colors and fixtures may vary and are confirmed in writing before purchase.</figcaption>
-          </figure>
-          <div class="ba-body">
-            <div class="eyebrow">Proposed · Investor package</div>
-            <h3>Bedroom</h3>
-            <ul class="ticks"><li>Nail holes and wall damage repaired; walls Agreeable Gray</li><li>New better mid-grade carpet</li><li>Extra White baseboards and window trim</li><li>Clean-out</li></ul>
-            <ul class="ba-meta">
-              <li><span>Stays in place</span><span>Room size, window, closet, doors</span></li>
-              <li><span>Budget</span><span>Included in the whole-home package price — Investor $19,950 (Complete $16,450 · Premium $26,400)</span></li>
-              <li><span>Timeline</span><span>Within the ~4-week Investor target</span></li>
-            </ul>
-          </div>
-        </article>
-      </div>
+      <div class="cmp-room"><h3>Living room</h3><div class="cmp-grid">
+          <div class="cmp-card existing"><div class="hd"><b>EXISTING</b><span>Actual photo</span></div><img src="mockups/img/living-room-before.jpg" alt="Living room, existing condition (actual photo)" width="900" height="1200" loading="lazy" decoding="async"><ul><li>Belongings and clutter throughout</li><li>Gray walls, worn oak floor</li></ul></div>
+          <div class="cmp-card "><div class="hd"><b>COMPLETE</b><span>$16,450</span></div><img src="mockups/img/living-room-complete.jpg" alt="Living room, Complete package visualization" width="900" height="1200" loading="lazy" decoding="async"><ul><li>Clean-out</li><li>Walls Agreeable Gray, flat white ceiling</li><li>Existing oak floor cleaned</li><li>Existing trim cleaned</li></ul></div>
+          <div class="cmp-card rec"><div class="hd"><b>INVESTOR<small>Recommended balance</small></b><span>$19,950</span></div><img src="mockups/img/living-room-investor.jpg" alt="Living room, Investor package visualization" width="900" height="1200" loading="lazy" decoding="async"><ul><li>Everything in Complete</li><li>Extra White baseboards and trim</li><li>Floor deep-cleaned, wear marks lifted</li><li>New cover plates</li></ul></div>
+          <div class="cmp-card "><div class="hd"><b>PREMIUM</b><span>$26,400</span></div><img src="mockups/img/living-room-premium.jpg" alt="Living room, Premium package visualization" width="900" height="1200" loading="lazy" decoding="async"><ul><li>Everything in Investor</li><li>Upgraded LED ceiling fixture</li><li>Crisp repainted trim and doors</li></ul></div>
+      </div></div>
+      <div class="cmp-room"><h3>Kitchen</h3><div class="cmp-grid">
+          <div class="cmp-card existing"><div class="hd"><b>EXISTING</b><span>Actual photo</span></div><img src="mockups/img/kitchen-before.jpg" alt="Kitchen, existing condition (actual photo)" width="900" height="1200" loading="lazy" decoding="async"><ul><li>Purple walls, open cabinet bays</li><li>Pendant hung off-center by its cord</li></ul></div>
+          <div class="cmp-card "><div class="hd"><b>COMPLETE</b><span>$16,450</span></div><img src="mockups/img/kitchen-complete.jpg" alt="Kitchen, Complete package visualization" width="900" height="1200" loading="lazy" decoding="async"><ul><li>Walls Agreeable Gray</li><li>Missing doors replaced, cabinets painted white</li><li>Existing knobs and green laminate counter</li><li>Simple flush light, centered</li></ul></div>
+          <div class="cmp-card rec"><div class="hd"><b>INVESTOR<small>Recommended balance</small></b><span>$19,950</span></div><img src="mockups/img/kitchen-investor.jpg" alt="Kitchen, Investor package visualization" width="900" height="1200" loading="lazy" decoding="async"><ul><li>Everything in Complete</li><li>Matte black pulls on doors and drawers</li><li>Flush LED light, centered</li></ul></div>
+          <div class="cmp-card "><div class="hd"><b>PREMIUM</b><span>$26,400</span></div><img src="mockups/img/kitchen-premium.jpg" alt="Kitchen, Premium package visualization" width="900" height="1200" loading="lazy" decoding="async"><ul><li>Alabaster walls</li><li>Light stone-look laminate countertop</li><li>Matte black hardware</li><li>Tile and grout deep-cleaned</li></ul></div>
+      </div></div>
+      <div class="cmp-room"><h3>Bathroom</h3><div class="cmp-grid">
+          <div class="cmp-card existing"><div class="hd"><b>EXISTING</b><span>Actual photo</span></div><img src="mockups/img/full-bath-before.jpg" alt="Bathroom, existing condition (actual photo)" width="900" height="1200" loading="lazy" decoding="async"><ul><li>Blue walls, belongings on floor</li><li>Failed shower valve (out of frame)</li></ul></div>
+          <div class="cmp-card "><div class="hd"><b>COMPLETE</b><span>$16,450</span></div><img src="mockups/img/full-bath-complete.jpg" alt="Bathroom, Complete package visualization" width="900" height="1200" loading="lazy" decoding="async"><ul><li>Walls Alabaster</li><li>Shower valve repair, new rod and curtain</li><li>Existing faucet, clean presentation</li></ul></div>
+          <div class="cmp-card rec"><div class="hd"><b>INVESTOR<small>Recommended balance</small></b><span>$19,950</span></div><img src="mockups/img/full-bath-investor.jpg" alt="Bathroom, Investor package visualization" width="900" height="1200" loading="lazy" decoding="async"><ul><li>Everything in Complete</li><li>Brushed-nickel faucet and accessories</li><li>Pressure-balance shower trim</li></ul></div>
+          <div class="cmp-card "><div class="hd"><b>PREMIUM</b><span>$26,400</span></div><img src="mockups/img/full-bath-premium.jpg" alt="Bathroom, Premium package visualization" width="900" height="1200" loading="lazy" decoding="async"><ul><li>Everything in Investor</li><li>Added vanity wall light</li><li>Tub/shower surround kit (out of frame)</li></ul></div>
+      </div></div>
+      <div class="cmp-room"><h3>Bedroom</h3><div class="cmp-grid">
+          <div class="cmp-card existing"><div class="hd"><b>EXISTING</b><span>Actual photo</span></div><img src="mockups/img/bedroom-3-before-ba.jpg" alt="Bedroom, existing condition (actual photo)" width="900" height="1200" loading="lazy" decoding="async"><ul><li>Damaged walls, worn carpet</li><li>Signs, strings and debris</li></ul></div>
+          <div class="cmp-card "><div class="hd"><b>COMPLETE</b><span>$16,450</span></div><img src="mockups/img/bedroom-3-complete.jpg" alt="Bedroom, Complete package visualization" width="900" height="1200" loading="lazy" decoding="async"><ul><li>Walls patched, Agreeable Gray</li><li>Economical builder-grade carpet</li><li>Existing trim cleaned</li></ul></div>
+          <div class="cmp-card rec"><div class="hd"><b>INVESTOR<small>Recommended balance</small></b><span>$19,950</span></div><img src="mockups/img/bedroom-3-investor.jpg" alt="Bedroom, Investor package visualization" width="900" height="1200" loading="lazy" decoding="async"><ul><li>Everything in Complete</li><li>Better mid-grade carpet</li><li>Extra White baseboards and trim</li></ul></div>
+          <div class="cmp-card "><div class="hd"><b>PREMIUM</b><span>$26,400</span></div><img src="mockups/img/bedroom-3-premium.jpg" alt="Bedroom, Premium package visualization" width="900" height="1200" loading="lazy" decoding="async"><ul><li>Everything in Investor</li><li>Premium-grade plush carpet and pad</li><li>Crisp repainted trim and doors</li></ul></div>
+      </div></div>
     </div>
   </section>
-  <script>
-    (function () {
-      document.querySelectorAll('[data-ba]').forEach(function (card) {
-        var frame = card.querySelector('.ba-frame'), range = card.querySelector('.ba-range');
-        range.addEventListener('input', function () { frame.style.setProperty('--pos', range.value + '%'); });
-        // A room only appears once its proposed image exists.
-        card.querySelectorAll('img').forEach(function (img) {
-          function drop() { card.remove(); var list = document.querySelector('#before-after .ba-list');
-            if (list && !list.children.length) document.getElementById('before-after').remove(); }
-          img.addEventListener('error', drop);
-          if (img.complete && !img.naturalWidth) drop();
-        });
-      });
-    })();
-  </script>
 
   <!-- HVAC -->
   <section id="hvac">
