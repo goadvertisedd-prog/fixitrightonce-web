@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>717 Gaskill Ave — Finish Mockups by Package | FixItRightOnce</title>
-  <meta name="description" content="Package-by-package finish mockups for 717 Gaskill Ave, Mount Ephraim, NJ 08059.">
+  <title>717 Gaskill Ave — Property Photos by Room | FixItRightOnce</title>
+  <meta name="description" content="Existing-condition photos and package scope by room for 717 Gaskill Ave, Mount Ephraim, NJ 08059.">
   <!-- Investor-specific page: keep out of search engines and the sitemap. -->
   <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="googlebot" content="noindex, nofollow, noarchive">
@@ -122,17 +122,17 @@
   <section class="hero">
     <div class="wrap">
       <div class="eyebrow">717 Gaskill Ave · Mount Ephraim, NJ 08059</div>
-      <h1>Finish mockups</h1>
+      <h1>Property photos</h1>
       <div class="rule" aria-hidden="true"></div>
       <div class="sub">Current condition · Complete · Investor · Premium</div>
-      <p class="lede">Each mockup starts from a real photograph of this property and shows only work included in that package’s price. Walls, windows, doors, stairs, ceilings, cabinets, plumbing and electrical locations stay where they are.</p>
+      <p class="lede">Every photo shows the actual existing condition of this property. Under each photo, the planned work is listed for each package; walls, windows, doors, stairs, ceilings, cabinets, plumbing and electrical locations stay where they are.</p>
       <div class="legend">
         <span class="chip">CURRENT CONDITION</span>
         <span class="chip">COMPLETE · $16,450</span>
         <span class="chip rec">INVESTOR · $19,950 · RECOMMENDED BALANCE</span>
         <span class="chip">PREMIUM · $26,400</span>
       </div>
-      <p class="notice">Mockups are visual illustrations of the proposed scope, not photographs of completed work. Final materials, colors and fixtures are confirmed in writing before purchase, and actual results may vary. Anything marked <strong>OPTIONAL — NOT INCLUDED IN PACKAGE PRICE</strong> requires separate written approval and adds cost.</p>
+      <p class="notice">Photos show the property as it is today, before any work. Final materials, colors and fixtures are confirmed in writing before purchase. Anything marked <strong>OPTIONAL — NOT INCLUDED IN PACKAGE PRICE</strong> requires separate written approval and adds cost.</p>
     </div>
   </section>
 
@@ -144,8 +144,8 @@
   <section class="missing" id="not-shown">
     <div class="wrap">
       <div class="eyebrow">Not shown</div>
-      <h2 style="font-size:clamp(20px,2.6vw,26px)">Areas in scope without a mockup</h2>
-      <p class="lede" style="margin-top:10px">These areas are part of every package, but no usable photograph is available yet, so no mockup is shown. The written scope on the <a href="../#finishes">proposal page</a> applies.</p>
+      <h2 style="font-size:clamp(20px,2.6vw,26px)">Areas in scope without a photo</h2>
+      <p class="lede" style="margin-top:10px">These areas are part of every package, but no usable photograph is available yet. The written scope on the <a href="../#finishes">proposal page</a> applies.</p>
       <ul>
         <li>Full-bath tub/shower close-up (valve/cartridge repair, surround by package)</li>
         <li>Front elevation and concrete porch</li>
@@ -156,15 +156,14 @@
 
 <footer>
   <div class="wrap">
-    <p><strong>717 Gaskill Ave, Mount Ephraim, NJ 08059</strong> · Finish mockups prepared by FixItRightOnce · 929-436-7333</p>
-    <p>Illustrations of proposed scope only. Proposed commercial terms subject to final written agreement and applicable New Jersey requirements. No representation is made about after-repair value, resale price, profit or investment return.</p>
+    <p><strong>717 Gaskill Ave, Mount Ephraim, NJ 08059</strong> · Property photos and package scope by FixItRightOnce · 929-436-7333</p>
+    <p>Existing-condition photos only; no completed work is shown. Proposed commercial terms subject to final written agreement and applicable New Jersey requirements. No representation is made about after-repair value, resale price, profit or investment return.</p>
   </div>
 </footer>
 
 <script>
   // One entry per photographed area. Images live in img/ as
   //   <id>-before.jpg, <id>-complete.jpg, <id>-investor.jpg, <id>-premium.jpg
-  // A missing file shows a "pending" panel instead of a broken image.
   // Every "changes" line must be in that package's scope; optional work goes in "optional".
   var PACKAGES = [
     { key: 'complete', name: 'COMPLETE', price: '$16,450' },
@@ -299,7 +298,6 @@
     PACKAGES.forEach(function (p, i) {
       var panel = el('div', { 'class': 'panel' + (p.rec ? ' rec' : '') });
       panel.appendChild(el('div', { 'class': 'label' }, '<b>' + p.name + (p.rec ? '<small>Recommended balance</small>' : '') + '</b><span>' + p.price + '</span>'));
-      panel.appendChild(shot(room, p.key, p.name + ' · ' + p.price));
       var html = '<h3>' + (i === 0 ? 'What’s changing' : 'Adds to ' + PACKAGES[i - 1].name) + '</h3>' + list(room[p.key]);
       var o = room.optional && (room.optional[p.key] || (room.optional.all && i === 0 ? room.optional.all : null));
       if (o) html += '<div class="opt">' + esc(o) + '</div>';

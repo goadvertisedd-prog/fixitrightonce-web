@@ -288,7 +288,7 @@
 <main id="top">
 
   <!-- HERO -->
-  <section class="hero" id="hero">
+  <section class="hero no-photo" id="hero">
     <div class="wrap">
       <div class="hero-grid">
         <div>
@@ -303,11 +303,6 @@
             <a class="btn ghost" href="#packages">Compare packages</a>
           </div>
         </div>
-        <!-- Property photograph: drop the chosen exterior shot at mockups/img/hero.jpg. -->
-        <figure class="hero-photo" id="hero-photo">
-          <img src="mockups/img/hero.jpg" alt="717 Gaskill Ave — current condition" width="1200" height="900" decoding="async">
-          <figcaption>Current condition · 717 Gaskill Ave</figcaption>
-        </figure>
       </div>
 
       <div class="stats" role="list">
@@ -321,14 +316,6 @@
     </div>
     <div class="hero-foot"></div>
   </section>
-  <script>
-    (function () {
-      var fig = document.getElementById('hero-photo'), img = fig.querySelector('img');
-      function drop() { fig.remove(); document.getElementById('hero').classList.add('no-photo'); }
-      img.addEventListener('error', drop);
-      if (img.complete && !img.naturalWidth) drop();
-    })();
-  </script>
 
   <!-- HOW THE PROJECT IS CONTROLLED -->
   <section class="controls" aria-label="How the project is controlled">
@@ -602,7 +589,7 @@
       <div class="sec-head">
         <div class="eyebrow">Room by room</div>
         <h2>Finish plan by package.</h2>
-        <p class="lede">Colors refer to Sherwin-Williams names. On-screen swatches are approximate; final selections are confirmed in writing before purchase. <a href="mockups/">See the photo mockups by package →</a></p>
+        <p class="lede">Colors refer to Sherwin-Williams names. On-screen swatches are approximate; final selections are confirmed in writing before purchase. <a href="mockups/">See the property photos by room →</a></p>
       </div>
       <div class="rooms">
         <div class="card room">
@@ -904,7 +891,7 @@
       <div class="cta-btns">
         <button type="button" class="btn gold" data-open-retainer>View Project Retainer</button>
         <a class="btn" href="#packages">View Project Estimate</a>
-        <a class="btn" href="mockups/">View Finish Mockups</a>
+        <a class="btn" href="mockups/">View Property Photos</a>
         <a class="btn" href="tel:+19294367333">Contact FixItRightOnce</a>
       </div>
       <p class="contact">FixItRightOnce · <a href="tel:+19294367333">929-436-7333</a> · <a href="mailto:sergei@fixitrightonce.org?subject=717%20Gaskill%20Ave%20%E2%80%94%20Investor%20Proposal">sergei@fixitrightonce.org</a></p>
