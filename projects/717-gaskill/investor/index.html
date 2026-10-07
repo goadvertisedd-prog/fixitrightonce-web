@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>717 Gaskill Ave — Rehabilitation &amp; Investor Proposal | FixItRightOnce</title>
-  <meta name="description" content="Private rehab proposal for 717 Gaskill Ave, Mount Ephraim, NJ 08059.">
+  <title>717 Gaskill Ave — Investor Plus Proposal | FixItRightOnce</title>
+  <meta name="description" content="Private Investor Plus rehab proposal for 717 Gaskill Ave, Mount Ephraim, NJ 08059.">
   <!-- Investor-specific page: keep out of search engines and the sitemap. -->
   <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="googlebot" content="noindex, nofollow, noarchive">
@@ -81,13 +81,17 @@
     .hero-photo figcaption { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #AEB9C5; margin-top: 10px; }
     .stats { display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 48px; border-top: 1px solid rgba(255,255,255,.14); }
     @media (min-width: 720px) { .stats { grid-template-columns: repeat(3, 1fr); } }
-    @media (min-width: 1000px) { .stats { grid-template-columns: repeat(6, 1fr); } }
+    @media (min-width: 1000px) { .stats { grid-template-columns: repeat(5, 1fr); } }
     .stat { padding: 22px 18px 24px 0; border-bottom: 1px solid rgba(255,255,255,.14); }
     @media (min-width: 1000px) { .stat { border-bottom: 0; } .stat + .stat { padding-left: 18px; border-left: 1px solid rgba(255,255,255,.14); } }
     .stat b { display: block; font-family: var(--head); font-size: 24px; font-weight: 700; color: #fff; line-height: 1.1; }
     .stat span { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #AEB9C5; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
     .hero-foot { height: 56px; }
+    .hero .price { margin-top: 26px; font-family: var(--head); font-size: clamp(44px, 7vw, 64px); font-weight: 800; color: #fff; line-height: 1; letter-spacing: -0.02em; }
+    .hero .price small { display: block; margin-top: 10px; font-family: var(--body); font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+    .hero .preview { margin-top: 14px; font-size: 14px; }
+    .hero .preview button { background: none; border: 0; padding: 0; font: inherit; color: #fff; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; cursor: pointer; }
 
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 50px; padding: 0 24px; border-radius: 2px; font-family: var(--head); font-weight: 700; font-size: 14px; letter-spacing: .06em; text-decoration: none; border: 1px solid var(--navy); color: var(--navy); background: transparent; transition: background .15s, color .15s, border-color .15s; }
     .btn:hover { background: var(--navy); color: #fff; }
@@ -98,6 +102,13 @@
     .btn.ghost { border-color: rgba(255,255,255,.4); color: #fff; }
     .btn.ghost:hover { background: rgba(255,255,255,.08); border-color: #fff; }
     @media (max-width: 560px) { .hero-actions .btn, .cta-btns .btn { width: 100%; } }
+    .base-list { columns: 2 340px; column-gap: 36px; }
+    .base-list li { break-inside: avoid; }
+    .schedule { list-style: none; display: grid; gap: 10px; }
+    .schedule li { display: grid; grid-template-columns: 1fr; gap: 2px; padding: 16px 18px; background: var(--warm); border: 1px solid var(--gray); border-left: 3px solid var(--gold); border-radius: var(--radius); font-size: 15px; }
+    @media (min-width: 720px) { .schedule li { grid-template-columns: 220px 1fr; gap: 18px; } }
+    .schedule li b { font-family: var(--head); color: var(--navy); }
+    .schedule li.goal { background: var(--white); border-color: var(--gold); }
 
     /* Control strip */
     .controls { background: var(--white); border-bottom: 1px solid var(--gray); padding: 0; }
@@ -131,23 +142,6 @@
     .dots li::before { content: ""; position: absolute; left: 2px; top: 15px; width: 8px; height: 1px; background: var(--gold); }
     .note { border-left: 2px solid var(--gold); padding: 14px 18px; background: var(--white); font-size: 14px; color: var(--muted); }
     section.tint .note { background: var(--warm); }
-
-    /* Packages */
-    .pkgs { display: grid; gap: 20px; align-items: stretch; }
-    @media (min-width: 760px) { .pkgs { grid-template-columns: repeat(2, 1fr); } }
-    .pkg { position: relative; display: flex; flex-direction: column; background: var(--warm); border: 1px solid var(--gray); border-top: 3px solid var(--navy); border-radius: var(--radius); padding: 30px 26px 26px; }
-    .pkg.rec { background: var(--white); border: 1px solid var(--gold); border-top: 3px solid var(--gold); box-shadow: 0 20px 40px -30px rgba(16,42,67,.45); }
-    .pkg .flag { display: inline-block; align-self: flex-start; font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 4px 10px; margin-bottom: 16px; }
-    .pkg .name { font-family: var(--head); font-size: 14px; font-weight: 700; letter-spacing: .22em; color: var(--navy); }
-    .pkg .tagline { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-top: 6px; font-weight: 600; }
-    .pkg .price { font-family: var(--head); font-size: 46px; font-weight: 800; color: var(--navy); line-height: 1; margin: 18px 0 8px; letter-spacing: -0.02em; }
-    .pkg .meta { font-size: 13px; color: var(--muted); }
-    .pkg .pos { font-size: 15px; margin: 18px 0; padding: 16px 0; border-top: 1px solid var(--gray); border-bottom: 1px solid var(--gray); min-height: 84px; }
-    .pkg h4 { font-family: var(--body); font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
-    .pkg .ticks { flex: 1; }
-    .pkg .base { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 14px; }
-    .pkg.plus { background: var(--white); border: 1px solid rgba(176,141,87,.55); border-top: 3px solid var(--navy); }
-    .rec-note { font-size: 13px; color: var(--muted); margin-top: 18px; max-width: 900px; }
 
     /* Comparison table */
     .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--gray); border-radius: var(--radius); background: var(--white); margin-top: 48px; }
@@ -251,7 +245,7 @@
     .cta h2 { color: #fff; }
     .cta .lede { color: #AEB9C5; }
     .cta-btns { display: grid; gap: 12px; margin-top: 34px; }
-    @media (min-width: 720px) { .cta-btns { grid-template-columns: repeat(2, 1fr); max-width: 780px; } }
+    @media (min-width: 720px) { .cta-btns { grid-template-columns: repeat(3, 1fr); max-width: 900px; } }
     .cta .btn { border-color: rgba(255,255,255,.4); color: #fff; }
     .cta .btn:hover { background: rgba(255,255,255,.08); border-color: #fff; }
     .cta .btn.gold { color: var(--navy); border-color: var(--gold); }
@@ -306,14 +300,17 @@
           <div class="eyebrow">FixItRightOnce · Project proposal</div>
           <h1>717 Gaskill Ave</h1>
           <div class="rule" aria-hidden="true"></div>
-          <div class="sub">Rehabilitation &amp; Investor Proposal</div>
+          <div class="sub">Investor Plus Proposal</div>
           <div class="place">Mount Ephraim, New Jersey 08059 · Camden County</div>
-          <p class="lede">A complete, managed rehabilitation of a 1958 split-level. One identified scope of work, offered at three finish levels. Every package completes the full necessary rehab; higher packages buy better materials, finishes and resale presentation.</p>
+          <p class="lede">A complete, managed rehabilitation of a 1958 split-level, plus a new stainless kitchen. One fixed price for the full scope, with every other upgrade available as an optional addition.</p>
+          <div class="price">$25,228<small>Investor Plus · fixed price</small></div>
           <div class="hero-actions">
-            <button type="button" class="btn gold" data-open-retainer>View Project Retainer</button>
-            <a class="btn ghost" href="#packages">Compare packages</a>
-            <a class="btn ghost" href="#investor-plus">Investor Plus</a>
+            <a class="btn gold" href="717-gaskill-investor-plus-retainer.pdf" download>Download Retainer (PDF)</a>
+            <a class="btn ghost" href="#included">See what’s included</a>
+            <a class="btn ghost" href="#options">Optional additions</a>
+            <a class="btn ghost" href="tel:+19294367333">929-436-7333</a>
           </div>
+          <p class="preview"><button type="button" data-open-retainer>Preview the retainer on this page</button></p>
         </div>
       </div>
 
@@ -322,8 +319,7 @@
         <div class="stat" role="listitem"><b>1.5</b><span>Bathrooms</span></div>
         <div class="stat" role="listitem"><b>~1,516 SF</b><span>Living area</span></div>
         <div class="stat" role="listitem"><b>~7,500 SF</b><span>Lot</span></div>
-        <div class="stat" role="listitem"><b>4</b><span>Package options</span></div>
-        <div class="stat" role="listitem"><b>2–4 weeks</b><span>Target, by package</span></div>
+        <div class="stat" role="listitem"><b>Tue 11/24/2026</b><span>Target completion</span></div>
       </div>
     </div>
     <div class="hero-foot"></div>
@@ -409,158 +405,35 @@
     </div>
   </section>
 
-  <!-- PACKAGES -->
-  <section id="packages" class="tint">
+  <!-- INVESTOR PLUS — INCLUDED -->
+  <section id="included" class="tint">
     <div class="wrap">
       <div class="sec-head">
-        <div class="eyebrow">Four packages · One complete scope</div>
-        <h2>Every package completes the identified rehab.</h2>
-        <p class="lede">Nothing necessary drops out of a lower package. The difference between packages is the grade of materials, finishes, lighting, flooring and curb appeal — not whether the work gets done.</p>
+        <div class="eyebrow">What’s included</div>
+        <h2>Investor Plus — $25,228</h2>
+        <p class="lede">Investor base $19,950 + kitchen upgrade $5,278 = $25,228. Prices include materials (with NJ sales tax), labor and cleanup.</p>
       </div>
 
-      <div class="pkgs">
-        <article class="pkg">
-          <div class="name">COMPLETE</div>
-          <div class="tagline">Complete identified rehab</div>
-          <div class="price">$16,450</div>
-          <div class="meta">2–3 week target · includes 10% contingency allowance</div>
-          <p class="pos">Complete identified rehab using economical, functional materials.</p>
-          <div class="base">Full identified scope of work included</div>
-          <h4>Finish level</h4>
-          <ul class="ticks">
-            <li>Full interior repaint and wall patching</li>
-            <li>Clean, economical exterior paint finish</li>
-            <li>Furnace and central A/C replacement; electrical corrections</li>
-            <li>Shower repair</li>
-            <li>New flooring in all identified rooms</li>
-            <li>Landscaping clean-up and junk removal</li>
-            <li>Smoke/CO alarms and fire extinguisher</li>
-            <li>Permits/inspections as applicable, final cleaning</li>
-          </ul>
-        </article>
-
-        <article class="pkg rec">
-          <span class="flag">Recommended balance</span>
-          <div class="name">INVESTOR</div>
-          <div class="tagline">Upgraded resale presentation</div>
-          <div class="price">$19,950</div>
-          <div class="meta">3–4 week target · includes 10% contingency allowance</div>
-          <p class="pos">Complete rehab plus upgraded finishes and stronger resale presentation.</p>
-          <div class="base">Everything in COMPLETE, plus:</div>
-          <h4>Upgrades</h4>
-          <ul class="ticks">
-            <li>Better carpet upstairs</li>
-            <li>Waterproof LVP in lower-level rooms</li>
-            <li>Improved interior paint treatment; painted lower-level paneling</li>
-            <li>Repose Gray / Extra White / Tricorn Black exterior scheme</li>
-            <li>Pressure-balance shower valve and trim</li>
-            <li>Better lighting and fixtures; improved kitchen hardware</li>
-            <li>Stair handrail touch-up, door weatherstripping</li>
-            <li>GFCI corrections where appropriate</li>
-            <li>Better landscaping presentation</li>
-          </ul>
-        </article>
-
-        <article class="pkg">
-          <div class="name">PREMIUM</div>
-          <div class="tagline">Enhanced finish package</div>
-          <div class="price">$26,400</div>
-          <div class="meta">3–4 week target · includes 10% contingency allowance</div>
-          <p class="pos">Complete rehab plus premium finish selections and enhanced resale presentation.</p>
-          <div class="base">Everything necessary included, plus:</div>
-          <h4>Upgrades</h4>
-          <ul class="ticks">
-            <li>Premium-grade carpet and pad in bedrooms and upstairs hall</li>
-            <li>Premium exterior paint system, two colors, upgraded front door</li>
-            <li>Higher-quality interior finish; full trim and door repaint</li>
-            <li>New laminate kitchen countertop; better kitchen hardware</li>
-            <li>More substantial shower replacement</li>
-            <li>Improved bathroom lighting; LED lighting upgrades</li>
-            <li>Upgraded porch treatment</li>
-            <li>More finished landscaping; higher-end finish details</li>
-          </ul>
-        </article>
-
-        <article class="pkg plus">
-          <div class="name">INVESTOR PLUS</div>
-          <div class="tagline">Investor scope + new stainless kitchen</div>
-          <div class="price">$25,228</div>
-          <div class="meta">3–4 week target · includes 10% contingency allowance on the base</div>
-          <p class="pos">Everything in INVESTOR, plus matching stainless appliances with a French-door refrigerator and a new countertop, sink and faucet. Every other upgrade on the list is available as an optional addition.</p>
-          <h4>Includes</h4>
-          <ul class="ticks">
-            <li>Everything in INVESTOR ($19,950)</li>
-            <li>LG 30" French-door refrigerator, Frigidaire gas range, over-the-range microwave and dishwasher, installed</li>
-            <li>New stone-look laminate countertop, 33" stainless sink, Delta pull-down faucet</li>
-            <li>Resale CO inspection prepared, filed and passed</li>
-            <li>Optional additions priced individually (see <a href="#investor-plus">below</a>)</li>
-          </ul>
-        </article>
-      </div>
-      <p class="rec-note">“Recommended balance” is FixItRightOnce’s project recommendation for this scope — it reflects finish quality relative to price and is not a prediction of resale value or financial return. Furnace and central A/C replacement are included in every package (see <a href="#hvac">Heating &amp; cooling</a>). Optional upgrades are priced separately (see <a href="#options">Optional upgrades</a>).</p>
-
-      <!-- Comparison table -->
-      <div class="table-scroll" role="region" aria-label="Package comparison table" tabindex="0">
-        <table class="cmp">
-          <thead>
-            <tr>
-              <th scope="col">Item</th>
-              <th scope="col">COMPLETE</th>
-              <th scope="col" class="rec">INVESTOR</th>
-              <th scope="col">PREMIUM</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="group"><td colspan="4">Identified necessary scope — included in all packages</td></tr>
-            <tr><th scope="row">Furnace and central A/C replacement</th><td class="yes">Included</td><td class="rec yes">Included</td><td class="yes">Included</td></tr>
-            <tr><th scope="row">Electrical corrections (missing neutral, kitchen switch, spotlight, lower bath lighting)</th><td class="yes">Included</td><td class="rec yes">Included</td><td class="yes">Included</td></tr>
-            <tr><th scope="row">Shower repair (failed valve/cartridge)</th><td class="yes">Included</td><td class="rec yes">Included</td><td class="yes">Included</td></tr>
-            <tr><th scope="row">Wall patching, minor trim/casing repairs &amp; full interior repaint</th><td class="yes">Included</td><td class="rec yes">Included</td><td class="yes">Included</td></tr>
-            <tr><th scope="row">Exterior paint &amp; broken siding panel</th><td class="yes">Included</td><td class="rec yes">Included</td><td class="yes">Included</td></tr>
-            <tr><th scope="row">Flooring: 3 bedrooms, upstairs hall, 2 lower-level rooms</th><td class="yes">Included</td><td class="rec yes">Included</td><td class="yes">Included</td></tr>
-            <tr><th scope="row">Kitchen cabinets: doors repaired, re-hung or replaced; cabinets repainted white</th><td class="yes">Included</td><td class="rec yes">Included</td><td class="yes">Included</td></tr>
-            <tr><th scope="row">Stair handrails, front door, window screens, washer door lock</th><td class="yes">Included</td><td class="rec yes">Included</td><td class="yes">Included</td></tr>
-            <tr><th scope="row">Porch crack repair &amp; paint; telephone box reinstall</th><td class="yes">Included</td><td class="rec yes">Included</td><td class="yes">Included</td></tr>
-            <tr><th scope="row">Landscaping clean-up, grass, bush removal; junk removal</th><td class="yes">Included</td><td class="rec yes">Included</td><td class="yes">Included</td></tr>
-            <tr><th scope="row">Smoke/CO alarms, fire extinguisher</th><td class="yes">Included</td><td class="rec yes">Included</td><td class="yes">Included</td></tr>
-            <tr><th scope="row">Permits/inspections as applicable; lead-safe supplies; final cleaning</th><td class="yes">Included</td><td class="rec yes">Included</td><td class="yes">Included</td></tr>
-
-            <tr class="group"><td colspan="4">Finish level — where the packages differ</td></tr>
-            <tr><th scope="row">Upstairs bedrooms &amp; hall flooring</th><td>Economical carpet</td><td class="rec">Better-grade carpet</td><td>Premium-grade carpet &amp; pad</td></tr>
-            <tr><th scope="row">Lower-level flooring (2 rooms)</th><td>Economical flooring</td><td class="rec">Waterproof LVP</td><td>LVP</td></tr>
-            <tr><th scope="row">Interior paint</th><td>Full repaint, neutral</td><td class="rec">Improved paint treatment</td><td>Higher-quality finish + full trim/door repaint</td></tr>
-            <tr><th scope="row">Lower-level family room paneling</th><td>Cleaned</td><td class="rec">Painted</td><td>Painted, enhanced finish &amp; lighting</td></tr>
-            <tr><th scope="row">Exterior paint</th><td>Economical clean finish</td><td class="rec">Repose Gray / Extra White / Tricorn Black</td><td>Premium system, two colors, upgraded front door</td></tr>
-            <tr><th scope="row">Kitchen</th><td>Doors repaired/replaced, cabinets repainted white, existing hardware</td><td class="rec">Improved hardware, improved lighting</td><td>Better hardware + new laminate countertop</td></tr>
-            <tr><th scope="row">Full bathroom shower</th><td>Repair</td><td class="rec">Pressure-balance valve &amp; trim</td><td>More substantial shower replacement</td></tr>
-            <tr><th scope="row">Lighting</th><td>Repairs as identified</td><td class="rec">Better lighting/fixtures</td><td>LED upgrades, improved bath lighting</td></tr>
-            <tr><th scope="row">Lower half bath</th><td>Lighting repair, wall patch</td><td class="rec">Improved vanity light / mirror / faucet</td><td>Improved vanity light / mirror / faucet</td></tr>
-            <tr><th scope="row">Porch</th><td>Crack repair &amp; paint</td><td class="rec">Crack repair &amp; paint</td><td>Upgraded porch treatment</td></tr>
-            <tr><th scope="row">Landscaping</th><td>Clean-up</td><td class="rec">Better presentation</td><td>More finished landscaping</td></tr>
-            <tr><th scope="row">Extras</th><td>—</td><td class="rec">Handrail touch-up, weatherstripping, GFCI corrections where appropriate</td><td>All Investor extras + higher-end finish details</td></tr>
-
-            <tr class="group"><td colspan="4">Schedule &amp; price</td></tr>
-            <tr><th scope="row">Target duration</th><td>2–3 weeks</td><td class="rec">3–4 weeks</td><td>3–4 weeks</td></tr>
-            <tr><th scope="row">Contingency allowance</th><td>10% included</td><td class="rec">10% included</td><td>10% included</td></tr>
-            <tr class="total"><th scope="row">Proposed price</th><td>$16,450</td><td class="rec">$19,950</td><td>$26,400</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="scroll-hint">Swipe the table sideways to compare all three packages.</p>
-    </div>
-  </section>
-
-  <!-- INVESTOR PLUS — ITEMIZED -->
-  <section id="investor-plus" style="border-bottom:1px solid var(--gray)">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="eyebrow">Investor Plus</div>
-        <h2>Investor Plus — itemized</h2>
-        <p class="lede">Investor Plus = Investor base $19,950 + kitchen upgrade $5,278 = $25,228. Prices include materials (with NJ sales tax), labor and cleanup.</p>
+      <h3 class="ip-sub">Investor base — $19,950 (includes 10% contingency; unused contingency returned)</h3>
+      <div class="card" style="margin-top:18px">
+        <ul class="ticks base-list">
+          <li>New gas furnace (Goodman 80,000 BTU, 96% efficiency) and 3-ton central A/C with matching coil on the existing ducts; sized, installed and tested by a licensed NJ HVAC contractor, including permit and inspection</li>
+          <li>All identified electrical corrections (missing neutral, kitchen switch, spotlight, lower-bath lighting), GFCIs where required, improved LED fixtures</li>
+          <li>Leaking shower repaired with a new pressure-balance valve and trim; check for related water damage</li>
+          <li>Wall patching, minor trim/casing repairs, full interior repaint of walls and ceilings; lower-level paneling primed and painted</li>
+          <li>Kitchen cabinet doors repaired, re-hung or replaced as needed; cabinets painted white; new pulls and kitchen lighting</li>
+          <li>Better-grade carpet and pad in the three upstairs bedrooms and hall; waterproof LVP in both lower-level rooms, with floor prep, transitions and disposal</li>
+          <li>Lower half bath: new vanity light, mirror and faucet</li>
+          <li>Stair handrail repairs, front-door adjustment and weatherstripping, window screens, washer door-lock repair</li>
+          <li>Broken siding panel replaced; exterior paint scheme Repose Gray SW 7015 body / Extra White SW 7006 trim / Tricorn Black SW 6258 accents; porch crack repair and painting; telephone box reinstalled</li>
+          <li>Whole-property cleanup, grass cutting, bush removal, curb appeal, removal of abandoned belongings and renovation debris</li>
+          <li>Smoke/CO alarms, fire extinguisher, lead-safe (RRP) work practices, project management, electrical and plumbing permits, final cleaning, punch list and permit closeout</li>
+          <li>Resale CO: house prepared to pass Mount Ephraim’s resale Certificate of Occupancy inspection per the borough’s resale checklist; application filed and re-inspection items handled (borough fee billed at cost)</li>
+        </ul>
       </div>
 
-      <h3 class="ip-sub">Included kitchen upgrade — $5,278</h3>
-      <div class="table-scroll ip-table" role="region" aria-label="Included kitchen upgrade" tabindex="0">
+      <h3 class="ip-sub">Kitchen upgrade (included) — $5,278</h3>
+      <div class="table-scroll ip-table" role="region" aria-label="Kitchen upgrade" tabindex="0">
         <table class="cmp">
           <thead>
             <tr>
@@ -578,14 +451,141 @@
           </tbody>
         </table>
       </div>
+      <p class="scroll-hint">Swipe the table sideways to see every column.</p>
+    </div>
+  </section>
 
-      <h3 class="ip-sub">Optional additions — choose any</h3>
+  <!-- ROOMS -->
+  <section id="finishes">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Room by room</div>
+        <h2>Investor Plus finish plan.</h2>
+        <p class="lede">Colors refer to Sherwin-Williams names. On-screen swatches are approximate; final selections are confirmed in writing before purchase. <a href="mockups/">See the property photos by room →</a></p>
+      </div>
+      <div class="rooms">
+        <div class="card room">
+          <h3>Living room <span class="swatches"><i class="sw" style="background:#d1cbc1" title="Agreeable Gray"></i><i class="sw" style="background:#fafaf7" title="White ceiling"></i></span></h3>
+          <p class="small">Agreeable Gray walls · white ceiling · existing oak hardwood kept</p>
+          <ul class="ticks">
+            <li>Wall patching and full repaint of walls and ceiling</li>
+            <li>Improved light fixture and new cover plates</li>
+            <li>Existing oak hardwood cleaned</li>
+            <li><span class="small">Optional: hardwood screen-and-recoat ($500)</span></li>
+          </ul>
+        </div>
+        <div class="card room">
+          <h3>Kitchen <span class="swatches"><i class="sw" style="background:#d1cbc1" title="Agreeable Gray"></i><i class="sw" style="background:#fafaf7" title="White cabinets"></i></span></h3>
+          <p class="small">Agreeable Gray walls · existing cabinet boxes kept and painted white</p>
+          <ul class="ticks">
+            <li>Cabinet doors repaired, re-hung or replaced as needed; cabinets painted white; new pulls</li>
+            <li>Kitchen switch repaired; new LED kitchen lighting</li>
+            <li>A1 · Matching stainless appliances: LG French-door refrigerator (LFDS22520S), Frigidaire gas range (FCRG3052BS), over-the-range microwave (FMOS1746BS) and dishwasher (FFCD2413US), installed</li>
+            <li>A2 · New stone-look laminate countertop, 33" stainless sink, Delta Leland pull-down faucet; existing backsplash refreshed</li>
+          </ul>
+        </div>
+        <div class="card room">
+          <h3>Bedrooms <span class="swatches"><i class="sw" style="background:#d1cbc1" title="Agreeable Gray"></i></span></h3>
+          <p class="small">Agreeable Gray walls · three upstairs bedrooms and hall</p>
+          <ul class="ticks">
+            <li>Wall patching and full repaint</li>
+            <li>Better-grade carpet and pad, with floor prep, transitions and disposal</li>
+          </ul>
+        </div>
+        <div class="card room">
+          <h3>Full bathroom <span class="swatches"><i class="sw" style="background:#edeae0" title="Alabaster"></i></span></h3>
+          <p class="small">Alabaster walls · tub, toilet, sink and tile floor stay</p>
+          <ul class="ticks">
+            <li>Leaking shower repaired with a new pressure-balance valve and trim</li>
+            <li>Check for related water damage</li>
+            <li>Repaint; fresh caulk and grout touch-ups</li>
+          </ul>
+        </div>
+        <div class="card room">
+          <h3>Lower-level family room <span class="swatches"><i class="sw" style="background:#edeae0" title="Alabaster"></i></span></h3>
+          <p class="small">Existing 12×12 ceiling tiles stay in place and are not removed or disturbed</p>
+          <ul class="ticks">
+            <li>Paneling primed and painted</li>
+            <li>Waterproof LVP</li>
+            <li>Improved LED fixtures</li>
+          </ul>
+        </div>
+        <div class="card room">
+          <h3>Lower-level bedroom <span class="swatches"><i class="sw" style="background:#d1cbc1" title="Agreeable Gray"></i></span></h3>
+          <p class="small">Agreeable Gray walls · electrical-panel working clearance preserved</p>
+          <ul class="ticks">
+            <li>Wall patching and full repaint</li>
+            <li>Waterproof LVP</li>
+          </ul>
+        </div>
+        <div class="card room">
+          <h3>Lower half bath <span class="swatches"><i class="sw" style="background:#edeae0" title="Alabaster"></i></span></h3>
+          <p class="small">Alabaster walls</p>
+          <ul class="ticks">
+            <li>Lighting repaired; wall patched and repainted</li>
+            <li>New vanity light, mirror and faucet</li>
+          </ul>
+        </div>
+        <div class="card room">
+          <h3>Exterior <span class="swatches"><i class="sw" style="background:#ccc9c0" title="Repose Gray"></i><i class="sw" style="background:#eeefea" title="Extra White"></i><i class="sw" style="background:#2f2f30" title="Tricorn Black"></i></span></h3>
+          <p class="small">Repose Gray body · Extra White trim · Tricorn Black accents</p>
+          <ul class="ticks">
+            <li>Broken siding panel replaced; full exterior paint</li>
+            <li>Porch crack repair and painting; telephone box reinstalled</li>
+            <li>Window screens; front-door adjustment and weatherstripping</li>
+            <li>Whole-property cleanup, grass cutting, bush removal, curb appeal</li>
+          </ul>
+        </div>
+      </div>
+      <div class="palette" aria-label="House finish palette">
+        <div class="palette-title">House finish palette · Sherwin-Williams · ceilings flat white</div>
+        <span><i class="sw" style="background:#D1CBC1"></i><span>Agreeable Gray<small>SW 7029</small></span></span>
+        <span><i class="sw" style="background:#EEEFEA"></i><span>Extra White<small>SW 7006</small></span></span>
+        <span><i class="sw" style="background:#EDEAE0"></i><span>Alabaster<small>SW 7008</small></span></span>
+        <span><i class="sw" style="background:#CCC9C0"></i><span>Repose Gray<small>SW 7015</small></span></span>
+        <span><i class="sw" style="background:#2F2F30"></i><span>Tricorn Black<small>SW 6258</small></span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HVAC -->
+  <section id="hvac" class="tint">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Heating &amp; cooling</div>
+        <h2>Furnace and central A/C are both replaced.</h2>
+        <p class="lede">The existing central A/C does not work. Replacing it is part of the identified scope, alongside the furnace replacement, and is included in the Investor Plus price. It is a mechanical necessity, not a finish upgrade.</p>
+      </div>
+      <div class="split">
+        <div>
+          <span class="lbl ok">Furnace</span>
+          <h3>Old gas furnace replaced.</h3>
+          <p style="margin-top:10px">New gas forced-air furnace on the existing ductwork. No new duct runs are expected.</p>
+        </div>
+        <div>
+          <span class="lbl ok">Central A/C</span>
+          <h3>Non-working A/C replaced.</h3>
+          <p style="margin-top:10px">New central A/C on the existing ductwork, installed by a licensed NJ HVAC contractor with the required permit and inspection.</p>
+          <p class="small">The outdoor area around the condenser is cleared as part of the landscaping scope.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTIONS -->
+  <section id="options">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Not included in the $25,228 price</div>
+        <h2>Optional additions — choose any</h2>
+        <p class="lede">Each addition is priced individually and added only when you select it on the retainer or approve it in writing.</p>
+      </div>
       <div class="table-scroll ip-table" role="region" aria-label="Optional additions" tabindex="0">
         <table class="cmp">
           <thead>
             <tr>
               <th scope="col" class="id">#</th>
-              <th scope="col">Item</th>
+              <th scope="col">Addition</th>
               <th scope="col" class="num">Materials</th>
               <th scope="col" class="num">Labor</th>
               <th scope="col" class="num">Price</th>
@@ -595,7 +595,7 @@
             <tr><td class="id">U1</td><td>Quartz countertop instead of laminate (prefab white quartz)</td><td class="num">$1,130</td><td class="num">$539</td><td class="num">$1,669</td></tr>
             <tr><td class="id">U2</td><td>Under-sink drinking-water filter with its own faucet (Waterdrop 15UB-UF)</td><td class="num">$91</td><td class="num">$109</td><td class="num">$200</td></tr>
             <tr><td class="id">A3</td><td>Full interior trim and door repaint; new matching passage and privacy knobs</td><td class="num">$517</td><td class="num">$4,483</td><td class="num">$5,000</td></tr>
-            <tr><td class="id">A4</td><td>Living-room hardwood screen and recoat</td><td class="num">$96</td><td class="num">$404</td><td class="num">$500</td></tr>
+            <tr><td class="id">A4</td><td>Living-room hardwood screen and recoat (finish included)</td><td class="num">$96</td><td class="num">$404</td><td class="num">$500</td></tr>
             <tr><td class="id">A5</td><td>Carpet and pad on both stair flights</td><td class="num">$197</td><td class="num">$453</td><td class="num">$650</td></tr>
             <tr><td class="id">A6</td><td>Full bath: new tub/shower wall surround (white marble look)</td><td class="num">$576</td><td class="num">$2,210</td><td class="num">$2,786</td></tr>
             <tr><td class="id">A7</td><td>Full bath: new vanity light and quiet exhaust fan</td><td class="num">$379</td><td class="num">$621</td><td class="num">$1,000</td></tr>
@@ -606,18 +606,29 @@
           </tbody>
         </table>
       </div>
-      <p class="scroll-hint">Swipe the tables sideways to see every column.</p>
+      <p class="scroll-hint">Swipe the table sideways to see every column.</p>
       <p class="ip-after">Investor Plus with every optional addition: $39,895.</p>
+      <ul class="opts" style="margin-top:18px">
+        <li><span>Dead tree removal, if confirmed on the property</span><span>~$800–$1,500</span></li>
+      </ul>
 
-      <div class="grid-2 ip-cards">
-        <div class="card">
-          <h3>Only if needed after inspection</h3>
-          <ul class="opts">
-            <li><span>New subway-tile backsplash</span><span>$800</span></li>
-            <li><span>New toilet</span><span>$550</span></li>
-            <li><span>New vanity, faucet and mirror</span><span>$900</span></li>
-          </ul>
-        </div>
+      <h3 class="ip-sub">Only if needed after inspection</h3>
+      <ul class="opts" style="margin-top:18px">
+        <li><span>New subway-tile backsplash</span><span>$800</span></li>
+        <li><span>New toilet</span><span>$550</span></li>
+        <li><span>New vanity, faucet and mirror</span><span>$900</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COVERAGE -->
+  <section id="coverage" class="tint">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Coverage</div>
+        <h2>What’s covered, and what isn’t.</h2>
+      </div>
+      <div class="grid-2">
         <div class="card">
           <h3>Included at no charge</h3>
           <ul class="ticks">
@@ -636,219 +647,26 @@
             <li>Staging, listing photos and utilities during work.</li>
           </ul>
         </div>
-        <div class="card">
-          <h3>Investor Plus schedule</h3>
-          <ul class="dots">
-            <li><strong>By Fri 10/16/2026:</strong> scope, price and selections approved</li>
-            <li><strong>By Fri 10/23/2026:</strong> access to measure; appliances and HVAC equipment ordered</li>
-            <li><strong>Fri 10/30/2026:</strong> closing; escrow funded</li>
-            <li><strong>Target substantial completion: Tue 11/24/2026</strong>, ready for listing photos before Thanksgiving</li>
-          </ul>
-          <p class="note" style="margin-top:14px">Note: Target assumes approvals and orders by these dates. Optional additions (especially the tub surround and trim repaint) may add a few days, confirmed when selected.</p>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- SCOPE -->
-  <section id="scope">
+  <!-- SCHEDULE -->
+  <section id="timeline">
     <div class="wrap">
       <div class="sec-head">
-        <div class="eyebrow">Identified scope of work</div>
-        <h2>The full walkthrough scope — in every package.</h2>
-        <p class="lede">These items come from the on-site walkthrough. All of them are included in COMPLETE, INVESTOR and PREMIUM.</p>
-      </div>
-      <div class="scope-grid">
-        <div class="card">
-          <h3>Interior</h3>
-          <ul class="ticks">
-            <li>Repaint whole interior</li>
-            <li>Patch wall holes; minor trim and door-casing repairs</li>
-            <li>Replace carpet/flooring in 3 bedrooms and upstairs hallway</li>
-            <li>Replace flooring in 2 lower-level rooms</li>
-            <li>Repair, re-hang or replace kitchen cabinet doors; repaint cabinets white</li>
-            <li>Repair metal stair handrails</li>
-            <li>Adjust front door</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Mechanical, electrical &amp; plumbing</h3>
-          <ul class="ticks">
-            <li>Replace old furnace</li>
-            <li>Replace non-working central A/C</li>
-            <li>Correct missing electrical neutral</li>
-            <li>Repair kitchen switch</li>
-            <li>Troubleshoot spotlight</li>
-            <li>Repair lower-level bathroom lighting</li>
-            <li>Repair shower</li>
-            <li>Repair washer door lock</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Exterior &amp; site</h3>
-          <ul class="ticks">
-            <li>Replace one siding panel</li>
-            <li>Paint exterior</li>
-            <li>Repair cracks in concrete porch; paint porch</li>
-            <li>Replace 3–6 window screens</li>
-            <li>Reinstall telephone box</li>
-            <li>Landscaping around whole house; cut grass; remove bushes</li>
-            <li>Dispose of belongings left by previous owners</li>
-          </ul>
-        </div>
-      </div>
-      <div class="card" style="margin-top:20px">
-        <h3>Also included in every package</h3>
-        <ul class="ticks" style="columns: 2 240px; column-gap: 32px;">
-          <li>Smoke and CO alarms</li>
-          <li>Fire extinguisher</li>
-          <li>Required permits/inspections as applicable</li>
-          <li>Lead-safe (RRP) work supplies</li>
-          <li>Final cleaning</li>
-          <li>Project management and coordination of licensed trades</li>
-          <li>Resale CO: house prepared to pass Mount Ephraim’s resale Certificate of Occupancy inspection per the borough’s resale checklist; application filed and re-inspection items handled (borough fee billed at cost)</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ROOMS -->
-  <section id="finishes" class="tint">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="eyebrow">Room by room</div>
-        <h2>Finish plan by package.</h2>
-        <p class="lede">Colors refer to Sherwin-Williams names. On-screen swatches are approximate; final selections are confirmed in writing before purchase. <a href="mockups/">See the property photos by room →</a></p>
-      </div>
-      <div class="rooms">
-        <div class="card room">
-          <h3>Living room <span class="swatches"><i class="sw" style="background:#d1cbc1" title="Agreeable Gray"></i><i class="sw" style="background:#fafaf7" title="White ceiling"></i></span></h3>
-          <p class="small">Agreeable Gray walls · white ceiling · existing oak hardwood cleaned</p>
-          <ul class="tiers">
-            <li><b>Complete</b><span>Repaint, patch, clean existing oak hardwood</span></li>
-            <li><b>Investor</b><span>Plus improved paint treatment and better fixtures</span></li>
-            <li><b>Premium</b><span>Plus full trim/door repaint and LED lighting upgrades</span></li>
-            <li><b>Optional</b><span>Hardwood screen-and-recoat (~$500)</span></li>
-          </ul>
-        </div>
-        <div class="card room">
-          <h3>Kitchen <span class="swatches"><i class="sw" style="background:#d1cbc1" title="Agreeable Gray"></i><i class="sw" style="background:#edeae0" title="Alabaster"></i></span></h3>
-          <p class="small">Agreeable Gray or Alabaster walls, depending on package · existing cabinet boxes kept and repainted white</p>
-          <ul class="tiers">
-            <li><b>Complete</b><span>Cabinet doors repaired or replaced, cabinets repainted white, kitchen switch repaired</span></li>
-            <li><b>Investor</b><span>Plus upgraded pulls and improved lighting</span></li>
-            <li><b>Premium</b><span>Plus better hardware and new laminate countertop</span></li>
-          </ul>
-        </div>
-        <div class="card room">
-          <h3>Bedrooms <span class="swatches"><i class="sw" style="background:#d1cbc1" title="Neutral"></i></span></h3>
-          <p class="small">Neutral walls · wall patching included in all packages</p>
-          <ul class="tiers">
-            <li><b>Complete</b><span>Repaint, patch, new economical carpet</span></li>
-            <li><b>Investor</b><span>Upgraded carpet; improved paint treatment</span></li>
-            <li><b>Premium</b><span>Premium-grade carpet and pad; trim and doors repainted</span></li>
-          </ul>
-        </div>
-        <div class="card room">
-          <h3>Full bathroom <span class="swatches"><i class="sw" style="background:#edeae0" title="Alabaster"></i></span></h3>
-          <p class="small">Alabaster / neutral finish</p>
-          <ul class="tiers">
-            <li><b>Complete</b><span>Shower repair (failed valve/cartridge)</span></li>
-            <li><b>Investor</b><span>Pressure-balance valve and trim upgrade</span></li>
-            <li><b>Premium</b><span>More complete shower surround upgrade; improved lighting</span></li>
-          </ul>
-        </div>
-        <div class="card room">
-          <h3>Lower-level family room</h3>
-          <p class="small">Existing 12×12 ceiling tiles stay in place and are not removed or disturbed</p>
-          <ul class="tiers">
-            <li><b>Complete</b><span>Clean existing paneling; new flooring</span></li>
-            <li><b>Investor</b><span>Painted paneling; waterproof LVP</span></li>
-            <li><b>Premium</b><span>Enhanced finish and lighting; LVP; trim/doors repainted</span></li>
-          </ul>
-        </div>
-        <div class="card room">
-          <h3>Lower-level bedroom <span class="swatches"><i class="sw" style="background:#d1cbc1" title="Neutral"></i></span></h3>
-          <p class="small">Neutral walls · electrical-panel working clearance preserved</p>
-          <ul class="tiers">
-            <li><b>Complete</b><span>Repaint; new economical flooring</span></li>
-            <li><b>Investor</b><span>Waterproof LVP</span></li>
-            <li><b>Premium</b><span>LVP; trim/doors repainted</span></li>
-          </ul>
-        </div>
-        <div class="card room">
-          <h3>Lower half bath</h3>
-          <p class="small">Lighting repair and wall patch in all packages</p>
-          <ul class="tiers">
-            <li><b>Complete</b><span>Repair lighting; patch wall; repaint</span></li>
-            <li><b>Investor</b><span>Improved vanity lighting, mirror and faucet</span></li>
-            <li><b>Premium</b><span>Improved vanity lighting, mirror and faucet; higher-end details</span></li>
-          </ul>
-        </div>
-        <div class="card room">
-          <h3>Exterior <span class="swatches"><i class="sw" style="background:#ccc9c0" title="Repose Gray"></i><i class="sw" style="background:#eeefea" title="Extra White"></i><i class="sw" style="background:#2f2f30" title="Tricorn Black"></i></span></h3>
-          <p class="small">Siding panel replaced, porch repaired, landscaping in all packages</p>
-          <ul class="tiers">
-            <li><b>Complete</b><span>Economical, clean paint finish</span></li>
-            <li><b>Investor</b><span>Repose Gray body / Extra White trim / Tricorn Black accents</span></li>
-            <li><b>Premium</b><span>Premium two-coat paint system, two colors, upgraded front door, enhanced landscaping and porch</span></li>
-          </ul>
-        </div>
-      </div>
-      <div class="palette" aria-label="House finish palette">
-        <div class="palette-title">House finish palette · Sherwin-Williams · ceilings flat white</div>
-        <span><i class="sw" style="background:#D1CBC1"></i><span>Agreeable Gray<small>SW 7029</small></span></span>
-        <span><i class="sw" style="background:#EEEFEA"></i><span>Extra White<small>SW 7006</small></span></span>
-        <span><i class="sw" style="background:#EDEAE0"></i><span>Alabaster<small>SW 7008</small></span></span>
-        <span><i class="sw" style="background:#CCC9C0"></i><span>Repose Gray<small>SW 7015</small></span></span>
-        <span><i class="sw" style="background:#2F2F30"></i><span>Tricorn Black<small>SW 6258</small></span></span>
-      </div>
-    </div>
-  </section>
-
-  <!-- HVAC -->
-  <section id="hvac">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="eyebrow">Heating &amp; cooling</div>
-        <h2>Furnace and central A/C are both replaced.</h2>
-        <p class="lede">The existing central A/C does not work. Replacing it is part of the identified scope in every package, alongside the furnace replacement, and is included in all three package prices. It is a mechanical necessity, not a finish upgrade.</p>
-      </div>
-      <div class="split">
-        <div>
-          <span class="lbl ok">Furnace</span>
-          <h3>Old gas furnace replaced.</h3>
-          <p style="margin-top:10px">New gas forced-air furnace on the existing ductwork. No new duct runs are expected.</p>
-        </div>
-        <div>
-          <span class="lbl ok">Central A/C</span>
-          <h3>Non-working A/C replaced.</h3>
-          <p style="margin-top:10px">New central A/C on the existing ductwork, installed by a licensed NJ HVAC contractor with the required permit and inspection.</p>
-          <p class="small">The outdoor area around the condenser is cleared as part of the landscaping scope.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TIMELINE -->
-  <section id="timeline" class="tint">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="eyebrow">Timeline</div>
-        <h2>Target duration by package.</h2>
+        <div class="eyebrow">Schedule</div>
+        <h2>Ready for listing photos before Thanksgiving.</h2>
         <p class="lede">These are targets, not unconditional guarantees.</p>
       </div>
-      <div class="tl">
-        <div class="card"><div class="eyebrow">COMPLETE</div><b>2–3 weeks</b><div class="bar"><i style="width:75%"></i></div></div>
-        <div class="card"><div class="eyebrow">INVESTOR</div><b>3–4 weeks</b><div class="bar"><i style="width:100%"></i></div></div>
-        <div class="card"><div class="eyebrow">PREMIUM</div><b>3–4 weeks</b><div class="bar"><i style="width:100%"></i></div></div>
-        <div class="card"><div class="eyebrow">INVESTOR PLUS</div><b>3–4 weeks</b><div class="bar"><i style="width:100%"></i></div></div>
-      </div>
+      <ul class="schedule">
+        <li><b>By Fri 10/16/2026</b><span>Scope, price and selections approved; retainer signed</span></li>
+        <li><b>By Fri 10/23/2026</b><span>Access to measure; appliances and HVAC equipment ordered</span></li>
+        <li><b>Fri 10/30/2026</b><span>Closing; escrow funded — project clock starts</span></li>
+        <li class="goal"><b>Tue 11/24/2026</b><span>Target substantial completion, ready for listing photos before Thanksgiving</span></li>
+      </ul>
+      <p class="note" style="margin-top:20px">Note: Target assumes approvals and orders by these dates. Optional additions (especially the tub surround and trim repaint) may add a few days, confirmed when selected.</p>
       <div class="clock">
-        <div class="card">
-          <h3>When the project clock starts</h3>
-          <p style="margin-top:12px">The project clock starts when escrow is funded.</p>
-        </div>
         <div class="card">
           <h3>What can move the schedule</h3>
           <ul class="dots">
@@ -957,22 +775,6 @@
     </div>
   </section>
 
-  <!-- OPTIONS -->
-  <section id="options" class="tint">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="eyebrow">Not included in package prices</div>
-        <h2>OPTIONAL UPGRADES</h2>
-        <p class="lede">Available with any package. Approximate pricing; added only by written approval.</p>
-      </div>
-      <ul class="opts">
-        <li><span>Stair carpet and pad, both flights</span><span>~$650</span></li>
-        <li><span>Living-room hardwood screen-and-recoat (finish included)</span><span>~$500</span></li>
-        <li><span>Dead tree removal, if confirmed on the property</span><span>~$800–$1,500</span></li>
-      </ul>
-    </div>
-  </section>
-
   <!-- BOTH SIDES -->
   <section id="partnership">
     <div class="wrap">
@@ -1013,14 +815,13 @@
     <div class="wrap">
       <div class="eyebrow">Next step</div>
       <h2>READY TO MOVE FORWARD?</h2>
-      <p class="lede" style="margin-top:14px">Choose a package — or Investor Plus with the optional additions you want. We’ll confirm the final scope, verify the outstanding due-diligence items, finalize the written agreement, and establish the project schedule before work begins.</p>
+      <p class="lede" style="margin-top:14px">Choose any optional additions on the retainer, sign it and email it to <a href="mailto:sergei@fixitrightonce.org?subject=717%20Gaskill%20Ave%20%E2%80%94%20Signed%20Investor%20Plus%20Retainer" style="color:#fff">sergei@fixitrightonce.org</a>.</p>
       <div class="cta-btns">
-        <button type="button" class="btn gold" data-open-retainer>View Project Retainer</button>
-        <a class="btn" href="#packages">View Project Estimate</a>
-        <a class="btn" href="mockups/">View Property Photos</a>
-        <a class="btn" href="tel:+19294367333">Contact FixItRightOnce</a>
+        <a class="btn gold" href="717-gaskill-investor-plus-retainer.pdf" download>Download Retainer (PDF)</a>
+        <a class="btn" href="tel:+19294367333">Call 929-436-7333</a>
+        <a class="btn" href="mailto:sergei@fixitrightonce.org?subject=717%20Gaskill%20Ave%20%E2%80%94%20Signed%20Investor%20Plus%20Retainer">Email</a>
       </div>
-      <p class="contact">FixItRightOnce · <a href="tel:+19294367333">929-436-7333</a> · <a href="mailto:sergei@fixitrightonce.org?subject=717%20Gaskill%20Ave%20%E2%80%94%20Investor%20Proposal">sergei@fixitrightonce.org</a></p>
+      <p class="contact">FixItRightOnce · <a href="tel:+19294367333">929-436-7333</a> · <a href="mailto:sergei@fixitrightonce.org?subject=717%20Gaskill%20Ave%20%E2%80%94%20Investor%20Plus%20Proposal">sergei@fixitrightonce.org</a> · <a href="mockups/">Property photos</a></p>
     </div>
   </section>
 </main>
@@ -1031,15 +832,15 @@
     <p>Proposed commercial terms subject to final written agreement and applicable New Jersey requirements. This document is not a substitute for legal advice. Prices, scope and schedule are a proposal, not a signed contract. No representation is made about after-repair value, resale price, profit or investment return.</p>
   </div>
 </footer>
-<div class="rv" id="retainer-viewer" role="dialog" aria-modal="true" aria-label="Project Retainer &amp; Proposal">
+<div class="rv" id="retainer-viewer" role="dialog" aria-modal="true" aria-label="Investor Plus Project Retainer">
   <div class="rv-bar">
-    <b><span class="long">Project Retainer &amp; Proposal</span><span class="short">Retainer</span></b>
+    <b><span class="long">Investor Plus Project Retainer</span><span class="short">Retainer</span></b>
     <div class="acts">
-      <a href="717-gaskill-project-retainer.pdf" download>Download PDF</a>
+      <a href="717-gaskill-investor-plus-retainer.pdf" download>Download PDF</a>
       <button type="button" data-close-retainer aria-label="Close">✕ Close</button>
     </div>
   </div>
-  <div class="rv-pages"><img src="retainer/page-1.jpg" alt="Project Retainer &amp; Proposal, page 1 of 7" width="1020" height="1320" loading="lazy" decoding="async"><img src="retainer/page-2.jpg" alt="Project Retainer &amp; Proposal, page 2 of 7" width="1020" height="1320" loading="lazy" decoding="async"><img src="retainer/page-3.jpg" alt="Project Retainer &amp; Proposal, page 3 of 7" width="1020" height="1320" loading="lazy" decoding="async"><img src="retainer/page-4.jpg" alt="Project Retainer &amp; Proposal, page 4 of 7" width="1020" height="1320" loading="lazy" decoding="async"><img src="retainer/page-5.jpg" alt="Project Retainer &amp; Proposal, page 5 of 7" width="1020" height="1320" loading="lazy" decoding="async"><img src="retainer/page-6.jpg" alt="Project Retainer &amp; Proposal, page 6 of 7" width="1020" height="1320" loading="lazy" decoding="async"><img src="retainer/page-7.jpg" alt="Project Retainer &amp; Proposal, page 7 of 7" width="1020" height="1320" loading="lazy" decoding="async"></div>
+  <div class="rv-pages"><img src="retainer/investor-plus-page-1.jpg" alt="Investor Plus Project Retainer, page 1 of 8" width="1020" height="1320" loading="lazy" decoding="async"><img src="retainer/investor-plus-page-2.jpg" alt="Investor Plus Project Retainer, page 2 of 8" width="1020" height="1320" loading="lazy" decoding="async"><img src="retainer/investor-plus-page-3.jpg" alt="Investor Plus Project Retainer, page 3 of 8" width="1020" height="1320" loading="lazy" decoding="async"><img src="retainer/investor-plus-page-4.jpg" alt="Investor Plus Project Retainer, page 4 of 8" width="1020" height="1320" loading="lazy" decoding="async"><img src="retainer/investor-plus-page-5.jpg" alt="Investor Plus Project Retainer, page 5 of 8" width="1020" height="1320" loading="lazy" decoding="async"><img src="retainer/investor-plus-page-6.jpg" alt="Investor Plus Project Retainer, page 6 of 8" width="1020" height="1320" loading="lazy" decoding="async"><img src="retainer/investor-plus-page-7.jpg" alt="Investor Plus Project Retainer, page 7 of 8" width="1020" height="1320" loading="lazy" decoding="async"><img src="retainer/investor-plus-page-8.jpg" alt="Investor Plus Project Retainer, page 8 of 8" width="1020" height="1320" loading="lazy" decoding="async"></div>
 </div>
 <script>
   (function () {

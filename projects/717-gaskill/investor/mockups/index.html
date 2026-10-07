@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>717 Gaskill Ave — Property Photos by Room | FixItRightOnce</title>
-  <meta name="description" content="Existing-condition photos and package scope by room for 717 Gaskill Ave, Mount Ephraim, NJ 08059.">
+  <meta name="description" content="Existing-condition photos and Investor Plus scope by room for 717 Gaskill Ave, Mount Ephraim, NJ 08059.">
   <!-- Investor-specific page: keep out of search engines and the sitemap. -->
   <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="googlebot" content="noindex, nofollow, noarchive">
@@ -70,7 +70,7 @@
     .room-head p { margin: 8px 0 0; max-width: 760px; }
 
     .flow { display: grid; gap: 0; }
-    @media (min-width: 1000px) { .flow { grid-template-columns: repeat(4, 1fr); gap: 18px; } }
+    @media (min-width: 1000px) { .flow { grid-template-columns: 380px 1fr; gap: 18px; } }
     .panel { background: var(--white); border: 1px solid var(--gray); border-top: 3px solid var(--navy); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
     section.room:nth-of-type(even) .panel { background: var(--warm); }
     .panel.current { border-top-color: var(--faint); }
@@ -126,14 +126,12 @@
       <div class="eyebrow">717 Gaskill Ave · Mount Ephraim, NJ 08059</div>
       <h1>Property photos</h1>
       <div class="rule" aria-hidden="true"></div>
-      <div class="sub">Current condition · Complete · Investor · Premium</div>
-      <p class="lede">Every photo shows the actual existing condition of this property. Under each photo, the planned work is listed for each package; walls, windows, doors, stairs, ceilings, cabinets, plumbing and electrical locations stay where they are.</p>
-      <p class="lede plus-line"><a href="/projects/717-gaskill/investor/#investor-plus">Investor Plus = Investor scope plus the kitchen upgrade and any optional additions listed on the proposal page.</a></p>
+      <div class="sub">Current condition · Investor Plus</div>
+      <p class="lede">Every photo shows the actual existing condition of this property. Under each photo, the planned Investor Plus work is listed; walls, windows, doors, stairs, ceilings, cabinets, plumbing and electrical locations stay where they are.</p>
+      <p class="lede plus-line"><a href="/projects/717-gaskill/investor/#included">Investor Plus ($25,228) = Investor base plus the new stainless kitchen. Full scope and optional additions are on the proposal page.</a></p>
       <div class="legend">
         <span class="chip">CURRENT CONDITION</span>
-        <span class="chip">COMPLETE · $16,450</span>
-        <span class="chip rec">INVESTOR · $19,950 · RECOMMENDED BALANCE</span>
-        <span class="chip">PREMIUM · $26,400</span>
+        <span class="chip rec">INVESTOR PLUS · $25,228</span>
       </div>
       <p class="notice">Photos show the property as it is today, before any work. Final materials, colors and fixtures are confirmed in writing before purchase. Anything marked <strong>OPTIONAL — NOT INCLUDED IN PACKAGE PRICE</strong> requires separate written approval and adds cost.</p>
     </div>
@@ -148,9 +146,9 @@
     <div class="wrap">
       <div class="eyebrow">Not shown</div>
       <h2 style="font-size:clamp(20px,2.6vw,26px)">Areas in scope without a photo</h2>
-      <p class="lede" style="margin-top:10px">These areas are part of every package, but no usable photograph is available yet. The written scope on the <a href="../#finishes">proposal page</a> applies.</p>
+      <p class="lede" style="margin-top:10px">These areas are part of the Investor Plus scope, but no usable photograph is available yet. The written scope on the <a href="../#finishes">proposal page</a> applies.</p>
       <ul>
-        <li>Full-bath tub/shower close-up (valve/cartridge repair, surround by package)</li>
+        <li>Full-bath tub/shower close-up (pressure-balance valve and trim; new surround is an optional addition)</li>
         <li>Front elevation and concrete porch</li>
       </ul>
     </div>
@@ -159,102 +157,73 @@
 
 <footer>
   <div class="wrap">
-    <p><strong>717 Gaskill Ave, Mount Ephraim, NJ 08059</strong> · Property photos and package scope by FixItRightOnce · 929-436-7333</p>
+    <p><strong>717 Gaskill Ave, Mount Ephraim, NJ 08059</strong> · Property photos and Investor Plus scope by FixItRightOnce · 929-436-7333</p>
     <p>Existing-condition photos only; no completed work is shown. Proposed commercial terms subject to final written agreement and applicable New Jersey requirements. No representation is made about after-repair value, resale price, profit or investment return.</p>
   </div>
 </footer>
 
 <script>
-  // One entry per photographed area. Images live in img/ as
-  //   <id>-before.jpg, <id>-complete.jpg, <id>-investor.jpg, <id>-premium.jpg
-  // Every "changes" line must be in that package's scope; optional work goes in "optional".
-  var PACKAGES = [
-    { key: 'complete', name: 'COMPLETE', price: '$16,450' },
-    { key: 'investor', name: 'INVESTOR', price: '$19,950', rec: true },
-    { key: 'premium',  name: 'PREMIUM',  price: '$26,400' }
-  ];
+  // One entry per photographed area. Images live in img/ as <id>-before.jpg.
+  // Every "plus" line must be in the Investor Plus scope; optional work goes in "optional".
+  var PKG = { name: 'INVESTOR PLUS', price: '$25,228' };
   var OPT = 'OPTIONAL — NOT INCLUDED IN PACKAGE PRICE';
 
   var ROOMS = [
     { id: 'living-room', name: 'Living room', note: 'Vaulted ceiling and existing oak hardwood stay.',
-      complete: ['Clean-out of belongings', 'Agreeable Gray walls, flat white ceiling', 'Existing oak hardwood cleaned'],
-      investor: ['Extra White trim', 'Improved simple light fixture', 'New cover plates'],
-      premium:  ['Upgraded lighting', 'Refined trim and door finish'],
-      optional: { premium: 'Hardwood screen-and-recoat (~$400) — ' + OPT } },
+      plus: ['Clean-out of belongings', 'Agreeable Gray walls, flat white ceiling', 'Existing oak hardwood cleaned', 'Improved simple light fixture', 'New cover plates'],
+      optional: ['Hardwood screen-and-recoat, finish included ($500) — ' + OPT] },
 
-    { id: 'kitchen', name: 'Kitchen', note: 'Existing cabinet boxes, layout, window and plumbing stay. No new kitchen.',
-      complete: ['Agreeable Gray walls (purple removed)', 'Missing doors replaced, damaged doors repaired', 'Cabinets repainted white', 'Ceiling light properly mounted', 'Clean-out'],
-      investor: ['Matte black cabinet pulls', 'Flush LED ceiling light', 'Cleaner overall presentation'],
-      premium:  ['Alabaster walls', 'Light stone-look laminate countertop', 'Matte black hardware, improved lighting', 'Tile and grout deep-cleaned'],
-      extra: 'Missing upper doors are replaced with plain doors matched to the existing style, and all cabinets are repainted white, in every package.' },
+    { id: 'kitchen', name: 'Kitchen', note: 'Existing cabinet boxes, layout, window and plumbing locations stay.',
+      plus: ['Agreeable Gray walls (purple removed)', 'Missing doors replaced, damaged doors repaired', 'Cabinets repainted white, matte black pulls', 'Flush LED ceiling light', 'New LG French-door refrigerator, Frigidaire gas range, over-the-range microwave and dishwasher; new stone-look laminate countertop, stainless sink and Delta pull-down faucet.', 'Clean-out'],
+      optional: ['Quartz countertop instead of laminate ($1,669) — ' + OPT],
+      extra: 'Missing upper doors are replaced with plain doors matched to the existing style, and all cabinets are repainted white.' },
 
-    { id: 'stairs', name: 'Stairs & foyer', note: 'Staircase geometry, metal railings, foyer tile and stair carpet stay.',
-      complete: ['Metal handrails repaired / re-anchored', 'Wall hole patched, scuffs repaired', 'Neutral repaint'],
-      investor: ['Handrail touch-up paint', 'Cleaner trim finish'],
-      premium:  ['Handrails fully repainted', 'Refined trim finish'],
-      optional: { all: 'New stair carpet, both flights (~$500) — ' + OPT } },
+    { id: 'stairs', name: 'Stairs & foyer', note: 'Staircase geometry, metal railings and foyer tile stay.',
+      plus: ['Metal handrails repaired / re-anchored, touch-up paint', 'Wall hole patched, scuffs repaired', 'Neutral repaint'],
+      optional: ['Carpet and pad on both stair flights ($650) — ' + OPT] },
 
     { id: 'upstairs-hall', name: 'Upstairs stair hall', note: 'Stair layout, railing design and hall layout stay.',
-      complete: ['Clean-out', 'Wall holes patched, Agreeable Gray walls', 'Metal railing repaired and re-anchored', 'New economical carpet in the hall'],
-      investor: ['Better mid-grade carpet', 'Railing touch-up paint', 'Extra White trim'],
-      premium:  ['Premium-grade carpet and pad', 'Railing fully repainted', 'Refined trim and door finish'],
-      optional: { all: 'New stair carpet, both flights (~$500) — ' + OPT } },
+      plus: ['Clean-out', 'Wall holes patched, Agreeable Gray walls', 'Metal railing repaired, re-anchored and touched up', 'Better-grade carpet and pad in the hall'],
+      optional: ['Carpet and pad on both stair flights ($650) — ' + OPT] },
 
     { id: 'bedroom-1', name: 'Bedroom 1', note: 'Room geometry, window and closet stay.',
-      complete: ['Clean-out', 'Agreeable Gray walls', 'Economical builder-grade carpet'],
-      investor: ['Better mid-grade carpet', 'Extra White trim and doors'],
-      premium:  ['Premium-grade carpet and pad', 'Improved ceiling light', 'Better trim and door finish'] },
+      plus: ['Clean-out', 'Agreeable Gray walls', 'Better-grade carpet and pad'],
+      optional: ['Full interior trim and door repaint; new matching knobs ($5,000) — ' + OPT] },
 
     { id: 'bedroom-2', name: 'Bedroom 2', note: 'Room geometry, window and closet stay.',
-      complete: ['Clean-out', 'Agreeable Gray walls (gray/blue removed)', 'Economical builder-grade carpet'],
-      investor: ['Better mid-grade carpet', 'Extra White trim and doors'],
-      premium:  ['Premium-grade carpet and pad', 'Improved ceiling light', 'Better trim and door finish'] },
+      plus: ['Clean-out', 'Agreeable Gray walls (gray/blue removed)', 'Better-grade carpet and pad'] },
 
     { id: 'bedroom-3', name: 'Bedroom 3', note: 'Room geometry, window and closet stay.',
-      complete: ['Nail holes, anchors and wall damage patched', 'Damaged door casing repaired and painted', 'Agreeable Gray walls', 'Economical builder-grade carpet'],
-      investor: ['Better mid-grade carpet', 'Extra White trim and doors'],
-      premium:  ['Premium-grade carpet and pad', 'Improved ceiling light', 'Better trim and door finish'] },
+      plus: ['Nail holes, anchors and wall damage patched', 'Damaged door casing repaired and painted', 'Agreeable Gray walls', 'Better-grade carpet and pad'] },
 
     { id: 'full-bath', name: 'Full bathroom', note: 'Tub/shower, toilet, pedestal sink and tile floor stay in place.',
-      complete: ['Alabaster walls (blue removed)', 'Shower cartridge / trim repair', 'Fresh caulk, new shower rod', 'Clean, simple presentation'],
-      investor: ['Pressure-balance valve and trim', 'Upgraded clean fixture finish'],
-      premium:  ['New tub/shower surround kit', 'Upgraded valve and trim', 'Improved vanity light'],
+      plus: ['Alabaster walls (blue removed)', 'Leaking shower repaired with a new pressure-balance valve and trim', 'Check for related water damage', 'Fresh caulk, new shower rod'],
+      optional: ['New tub/shower wall surround, white marble look ($2,786) — ' + OPT, 'New vanity light and quiet exhaust fan ($1,000) — ' + OPT],
       extra: 'The tub/shower is mostly out of frame in this photo; shower changes are described rather than fully shown.' },
 
-    { id: 'half-bath', name: 'Lower-level half bath', note: 'Toilet, vanity, wall cabinet, window and tile floor stay.',
-      complete: ['Light fixture repaired', 'Damaged wall above the mirror patched', 'Alabaster walls', 'Clean, simple presentation'],
-      investor: ['Improved vanity light'],
-      premium:  ['New mirror', 'Upgraded faucet'],
+    { id: 'half-bath', name: 'Lower-level half bath', note: 'Toilet, wall cabinet, window and tile floor stay.',
+      plus: ['Light fixture repaired', 'Damaged wall above the mirror patched', 'Alabaster walls', 'New vanity light, mirror and faucet'],
       extra: 'The reflection in the mirror is blurred in this photo for privacy.' },
 
     { id: 'family-room', name: 'Lower-level family room', note: 'Wood paneling and the existing 12×12 ceiling tiles stay. Tiles are not removed or disturbed.',
-      complete: ['Clean-out', 'Existing paneling cleaned', 'New economical neutral carpet', 'Ceiling tiles cleaned in place'],
-      investor: ['Paneling primed and painted Alabaster', 'Ceiling tiles painted flat white in place', 'Waterproof LVP'],
-      premium:  ['Painted paneling, LVP', 'Improved LED lighting', 'Improved trim and doors'],
-      extra: 'The old ceiling tiles may contain asbestos. This is accounted for in the plan: they are cleaned or painted in place as part of the painting scope, with appropriate precautions.' },
+      plus: ['Clean-out', 'Paneling primed and painted Alabaster', 'Ceiling tiles painted flat white in place', 'Waterproof LVP'],
+      extra: 'The old ceiling tiles may contain asbestos. Intact tiles are sealed in place with lead-safe painting at no extra charge; testing is an optional addition ($650).' },
 
     { id: 'lower-bedroom', name: 'Lower-level bedroom', note: 'Room layout, window and chair rail stay. Electrical-panel working clearance is preserved.',
-      complete: ['Clean-out, including the ceiling fabric', 'Agreeable Gray walls (green removed)', 'White chair rail kept and refreshed', 'New economical flooring'],
-      investor: ['Waterproof LVP', 'Improved trim'],
-      premium:  ['LVP', 'Improved lighting', 'Better trim and door finish'],
-      extra: 'Photographed from the doorway; the electrical panel is outside this frame.' },
+      plus: ['Clean-out, including the ceiling fabric', 'Agreeable Gray walls (green removed)', 'White chair rail kept and refreshed', 'Waterproof LVP'],
+      extra: 'Photographed from the doorway; the electrical panel is outside this frame. If the borough or an inspector requires a larger egress window here, that work is priced separately.' },
 
     { id: 'exterior-side', name: 'Exterior — side & A/C', note: 'Siding, windows and gutters stay. The A/C condenser shown is the existing, non-working unit.',
-      complete: ['Central A/C replaced (new condenser)', 'Overgrown bush and ivy removed', 'Lawn mowed, leaves cleared', 'White/neutral repaint', 'Telephone box reinstalled'],
-      investor: ['Repose Gray body, Extra White trim', 'Defined bed edge with dark mulch'],
-      premium:  ['Premium two-coat exterior finish', 'Clean mulch bed, a few low shrubs'],
-      extra: 'The existing central A/C does not work and is replaced in every package by a licensed NJ HVAC contractor.' },
+      plus: ['Central A/C replaced (new 3-ton condenser and matching coil)', 'Overgrown bush and ivy removed', 'Lawn mowed, leaves cleared', 'Repose Gray body, Extra White trim, Tricorn Black accents', 'Defined bed edge with dark mulch', 'Telephone box reinstalled'],
+      optional: ['Gutter/downspout cleaning and minor repairs, extensions, driveway and walkway cleaning ($1,285) — ' + OPT],
+      extra: 'The existing central A/C does not work and is replaced by a licensed NJ HVAC contractor.' },
 
     { id: 'exterior-gable', name: 'Exterior — gable siding', note: 'Siding profile, gable vent and window stay.',
-      complete: ['Cracked siding panel replaced', 'White/neutral repaint'],
-      investor: ['Repose Gray body, Extra White trim'],
-      premium:  ['Premium two-coat exterior finish'],
-      extra: 'The existing siding may be asbestos-cement. This is accounted for in the plan: panel replacement and painting are handled with appropriate precautions.' },
+      plus: ['Cracked siding panel replaced', 'Repose Gray body, Extra White trim'],
+      extra: 'The existing siding may be asbestos-cement. Intact siding is sealed with lead-safe painting at no extra charge; panel replacement is handled with appropriate precautions.' },
 
     { id: 'yard', name: 'Yard — fence corner', note: 'Existing fence and gate stay.',
-      complete: ['Overgrowth and bushes removed', 'Grass cut, debris cleared'],
-      investor: ['Defined edge with dark mulch'],
-      premium:  ['Clean mulch bed, limited low shrubs'] }
+      plus: ['Overgrowth and bushes removed', 'Grass cut, debris cleared', 'Defined edge with dark mulch'] }
   ];
 
   function el(tag, attrs, html) {
@@ -298,15 +267,12 @@
     before.appendChild(el('div', { 'class': 'changes' }, '<h3>Stays in place</h3>' + list([room.note], true)));
     flow.appendChild(before);
 
-    PACKAGES.forEach(function (p, i) {
-      var panel = el('div', { 'class': 'panel' + (p.rec ? ' rec' : '') });
-      panel.appendChild(el('div', { 'class': 'label' }, '<b>' + p.name + (p.rec ? '<small>Recommended balance</small>' : '') + '</b><span>' + p.price + '</span>'));
-      var html = '<h3>' + (i === 0 ? 'What’s changing' : 'Adds to ' + PACKAGES[i - 1].name) + '</h3>' + list(room[p.key]);
-      var o = room.optional && (room.optional[p.key] || (room.optional.all && i === 0 ? room.optional.all : null));
-      if (o) html += '<div class="opt">' + esc(o) + '</div>';
-      panel.appendChild(el('div', { 'class': 'changes' }, html));
-      flow.appendChild(panel);
-    });
+    var panel = el('div', { 'class': 'panel rec' });
+    panel.appendChild(el('div', { 'class': 'label' }, '<b>' + PKG.name + '</b><span>' + PKG.price + '</span>'));
+    var html = '<h3>What’s changing</h3>' + list(room.plus);
+    (room.optional || []).forEach(function (o) { html += '<div class="opt">' + esc(o) + '</div>'; });
+    panel.appendChild(el('div', { 'class': 'changes' }, html));
+    flow.appendChild(panel);
 
     wrap.appendChild(flow);
     if (room.extra) wrap.appendChild(el('p', { 'class': 'room-note' }, esc(room.extra)));
