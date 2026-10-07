@@ -134,7 +134,7 @@
 
     /* Packages */
     .pkgs { display: grid; gap: 20px; align-items: stretch; }
-    @media (min-width: 960px) { .pkgs { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 760px) { .pkgs { grid-template-columns: repeat(2, 1fr); } }
     .pkg { position: relative; display: flex; flex-direction: column; background: var(--warm); border: 1px solid var(--gray); border-top: 3px solid var(--navy); border-radius: var(--radius); padding: 30px 26px 26px; }
     .pkg.rec { background: var(--white); border: 1px solid var(--gold); border-top: 3px solid var(--gold); box-shadow: 0 20px 40px -30px rgba(16,42,67,.45); }
     .pkg .flag { display: inline-block; align-self: flex-start; font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 4px 10px; margin-bottom: 16px; }
@@ -146,6 +146,7 @@
     .pkg h4 { font-family: var(--body); font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
     .pkg .ticks { flex: 1; }
     .pkg .base { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 14px; }
+    .pkg.plus { background: var(--white); border: 1px solid rgba(176,141,87,.55); border-top: 3px solid var(--navy); }
     .rec-note { font-size: 13px; color: var(--muted); margin-top: 18px; max-width: 900px; }
 
     /* Comparison table */
@@ -159,6 +160,15 @@
     .cmp tr.group td { background: var(--warm); font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); padding: 10px 16px; }
     .cmp tr.total td, .cmp tr.total th { font-family: var(--head); font-size: 18px; font-weight: 800; color: var(--navy); border-bottom: 0; border-top: 2px solid var(--navy); }
     .yes { color: var(--navy); font-weight: 600; }
+    .cmp .id { width: 1%; white-space: nowrap; font-weight: 600; color: var(--gold); }
+    .cmp .num { width: 1%; text-align: right; white-space: nowrap; padding-left: 24px; }
+    .cmp tr.total td.num { font-size: 16px; }
+    .ip-table { margin-top: 18px; }
+    .ip-table table.cmp { min-width: 640px; }
+    .ip-sub { font-family: var(--head); color: var(--navy); font-size: 20px; margin: 44px 0 0; }
+    .ip-after { margin: 14px 0 0; font-family: var(--head); font-weight: 700; color: var(--navy); font-size: 17px; }
+    .ip-cards { margin-top: 44px; }
+    .ip-cards .card h3 { font-family: var(--head); color: var(--navy); font-size: 18px; }
     .scroll-hint { display: none; font-size: 12px; color: var(--faint); margin-top: 8px; }
     @media (max-width: 760px) { .scroll-hint { display: block; } }
 
@@ -191,7 +201,8 @@
 
     /* Timeline */
     .tl { display: grid; gap: 20px; }
-    @media (min-width: 760px) { .tl { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 760px) { .tl { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1040px) { .tl { grid-template-columns: repeat(4, 1fr); } }
     .tl .card .eyebrow { margin-bottom: 8px; }
     .tl .card b { display: block; font-family: var(--head); font-size: 32px; color: var(--navy); line-height: 1.1; }
     .bar { height: 3px; background: var(--gray); margin-top: 16px; overflow: hidden; }
@@ -301,6 +312,7 @@
           <div class="hero-actions">
             <button type="button" class="btn gold" data-open-retainer>View Project Retainer</button>
             <a class="btn ghost" href="#packages">Compare packages</a>
+            <a class="btn ghost" href="#investor-plus">Investor Plus</a>
           </div>
         </div>
       </div>
@@ -310,7 +322,7 @@
         <div class="stat" role="listitem"><b>1.5</b><span>Bathrooms</span></div>
         <div class="stat" role="listitem"><b>~1,516 SF</b><span>Living area</span></div>
         <div class="stat" role="listitem"><b>~7,500 SF</b><span>Lot</span></div>
-        <div class="stat" role="listitem"><b>3</b><span>Package options</span></div>
+        <div class="stat" role="listitem"><b>4</b><span>Package options</span></div>
         <div class="stat" role="listitem"><b>2–4 weeks</b><span>Target, by package</span></div>
       </div>
     </div>
@@ -401,7 +413,7 @@
   <section id="packages" class="tint">
     <div class="wrap">
       <div class="sec-head">
-        <div class="eyebrow">Three packages · One complete scope</div>
+        <div class="eyebrow">Four packages · One complete scope</div>
         <h2>Every package completes the identified rehab.</h2>
         <p class="lede">Nothing necessary drops out of a lower package. The difference between packages is the grade of materials, finishes, lighting, flooring and curb appeal — not whether the work gets done.</p>
       </div>
@@ -468,6 +480,22 @@
             <li>More finished landscaping; higher-end finish details</li>
           </ul>
         </article>
+
+        <article class="pkg plus">
+          <div class="name">INVESTOR PLUS</div>
+          <div class="tagline">Investor scope + new stainless kitchen</div>
+          <div class="price">$25,228</div>
+          <div class="meta">3–4 week target · includes 10% contingency allowance on the base</div>
+          <p class="pos">Everything in INVESTOR, plus matching stainless appliances with a French-door refrigerator and a new countertop, sink and faucet. Every other upgrade on the list is available as an optional addition.</p>
+          <h4>Includes</h4>
+          <ul class="ticks">
+            <li>Everything in INVESTOR ($19,950)</li>
+            <li>LG 30" French-door refrigerator, Frigidaire gas range, over-the-range microwave and dishwasher, installed</li>
+            <li>New stone-look laminate countertop, 33" stainless sink, Delta pull-down faucet</li>
+            <li>Resale CO inspection prepared, filed and passed</li>
+            <li>Optional additions priced individually (see <a href="#investor-plus">below</a>)</li>
+          </ul>
+        </article>
       </div>
       <p class="rec-note">“Recommended balance” is FixItRightOnce’s project recommendation for this scope — it reflects finish quality relative to price and is not a prediction of resale value or financial return. Furnace and central A/C replacement are included in every package (see <a href="#hvac">Heating &amp; cooling</a>). Optional upgrades are priced separately (see <a href="#options">Optional upgrades</a>).</p>
 
@@ -519,6 +547,106 @@
         </table>
       </div>
       <p class="scroll-hint">Swipe the table sideways to compare all three packages.</p>
+    </div>
+  </section>
+
+  <!-- INVESTOR PLUS — ITEMIZED -->
+  <section id="investor-plus" style="border-bottom:1px solid var(--gray)">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Investor Plus</div>
+        <h2>Investor Plus — itemized</h2>
+        <p class="lede">Investor Plus = Investor base $19,950 + kitchen upgrade $5,278 = $25,228. Prices include materials (with NJ sales tax), labor and cleanup.</p>
+      </div>
+
+      <h3 class="ip-sub">Included kitchen upgrade — $5,278</h3>
+      <div class="table-scroll ip-table" role="region" aria-label="Included kitchen upgrade" tabindex="0">
+        <table class="cmp">
+          <thead>
+            <tr>
+              <th scope="col" class="id">#</th>
+              <th scope="col">Item</th>
+              <th scope="col" class="num">Materials</th>
+              <th scope="col" class="num">Labor</th>
+              <th scope="col" class="num">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="id">A1</td><td>Matching stainless appliances: LG 30" French-door refrigerator with water dispenser (<a href="https://www.ajmadison.com/cgi-bin/ajmadison/LFDS22520S.html" target="_blank" rel="noopener noreferrer">LFDS22520S</a>), Frigidaire 30" gas range (<a href="https://www.ajmadison.com/cgi-bin/ajmadison/FCRG3052BS.html" target="_blank" rel="noopener noreferrer">FCRG3052BS</a>), Frigidaire over-the-range microwave (<a href="https://www.ajmadison.com/cgi-bin/ajmadison/FMOS1746BS.html" target="_blank" rel="noopener noreferrer">FMOS1746BS</a>), Frigidaire 24" dishwasher (<a href="https://www.ajmadison.com/cgi-bin/ajmadison/FFCD2413US.html" target="_blank" rel="noopener noreferrer">FFCD2413US</a>). Includes delivery, installation, gas and water hookups (including fridge water line), venting and old-appliance disposal.</td><td class="num">$3,316</td><td class="num">$500</td><td class="num">$3,816</td></tr>
+            <tr><td class="id">A2</td><td>New stone-look <a href="https://www.homedepot.com/p/Hampton-Bay-8-ft-L-x-1-1-8-in-T-Configurable-Laminate-Countertop-in-Matte-Marmo-Eracle-with-Square-Edge-1-1-10x98x25-Ma/325463126" target="_blank" rel="noopener noreferrer">laminate countertop</a>, 33" stainless sink, <a href="https://www.homedepot.com/p/301442569" target="_blank" rel="noopener noreferrer">Delta Leland pull-down faucet</a>; existing backsplash refreshed</td><td class="num">$1,101</td><td class="num">$361</td><td class="num">$1,462</td></tr>
+            <tr class="total"><th scope="row" colspan="2">Kitchen upgrade total</th><td class="num">$4,417</td><td class="num">$861</td><td class="num">$5,278</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="ip-sub">Optional additions — choose any</h3>
+      <div class="table-scroll ip-table" role="region" aria-label="Optional additions" tabindex="0">
+        <table class="cmp">
+          <thead>
+            <tr>
+              <th scope="col" class="id">#</th>
+              <th scope="col">Item</th>
+              <th scope="col" class="num">Materials</th>
+              <th scope="col" class="num">Labor</th>
+              <th scope="col" class="num">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="id">U1</td><td>Quartz countertop instead of laminate (prefab white quartz)</td><td class="num">$1,130</td><td class="num">$539</td><td class="num">$1,669</td></tr>
+            <tr><td class="id">U2</td><td>Under-sink drinking-water filter with its own faucet (Waterdrop 15UB-UF)</td><td class="num">$91</td><td class="num">$109</td><td class="num">$200</td></tr>
+            <tr><td class="id">A3</td><td>Full interior trim and door repaint; new matching passage and privacy knobs</td><td class="num">$517</td><td class="num">$4,483</td><td class="num">$5,000</td></tr>
+            <tr><td class="id">A4</td><td>Living-room hardwood screen and recoat</td><td class="num">$96</td><td class="num">$404</td><td class="num">$500</td></tr>
+            <tr><td class="id">A5</td><td>Carpet and pad on both stair flights</td><td class="num">$197</td><td class="num">$453</td><td class="num">$650</td></tr>
+            <tr><td class="id">A6</td><td>Full bath: new tub/shower wall surround (white marble look)</td><td class="num">$576</td><td class="num">$2,210</td><td class="num">$2,786</td></tr>
+            <tr><td class="id">A7</td><td>Full bath: new vanity light and quiet exhaust fan</td><td class="num">$379</td><td class="num">$621</td><td class="num">$1,000</td></tr>
+            <tr><td class="id">A8</td><td>Roof soft wash (low-pressure, manufacturer-appropriate), after a roof defect check</td><td class="num">—</td><td class="num">$927</td><td class="num">$927</td></tr>
+            <tr><td class="id">A9</td><td>Gutter/downspout cleaning and minor repairs, downspout extensions, driveway and walkway cleaning</td><td class="num">$83</td><td class="num">$1,202</td><td class="num">$1,285</td></tr>
+            <tr><td class="id">A10</td><td>Asbestos testing of siding and ceiling materials by a qualified tester</td><td class="num">—</td><td class="num">$650</td><td class="num">$650</td></tr>
+            <tr class="total"><th scope="row" colspan="2">All optional additions</th><td class="num"></td><td class="num"></td><td class="num">$14,667</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="scroll-hint">Swipe the tables sideways to see every column.</p>
+      <p class="ip-after">Investor Plus with every optional addition: $39,895.</p>
+
+      <div class="grid-2 ip-cards">
+        <div class="card">
+          <h3>Only if needed after inspection</h3>
+          <ul class="opts">
+            <li><span>New subway-tile backsplash</span><span>$800</span></li>
+            <li><span>New toilet</span><span>$550</span></li>
+            <li><span>New vanity, faucet and mirror</span><span>$900</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Included at no charge</h3>
+          <ul class="ticks">
+            <li>Check of all accessible doors and windows (operation, locks, glass, screens, seals), steps, railings, porch, visible drainage and the half bath; needed repairs reported with photos and priced before work</li>
+            <li>Fresh caulk and grout touch-ups in kitchen and baths, finished flooring edges and transitions, selections approved by the owner before ordering, thorough final cleaning, final walkthrough and punch list</li>
+            <li>All items in this scope delivered working; existing fixtures not replaced are tested and any failures reported and priced</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>What’s not covered</h3>
+          <ul class="dots">
+            <li><strong>Home inspection:</strong> the base covers everything identified in our walkthrough (the scope on this page). Conditions we could not inspect, such as the sewer line and anything hidden behind walls, floors or ceilings, are priced separately if found.</li>
+            <li><strong>Lower-level bedroom window:</strong> if the borough or an inspector requires a larger emergency-escape (egress) window for the lower-level bedroom, that work is priced separately.</li>
+            <li><strong>Asbestos:</strong> intact siding and ceiling materials are sealed with lead-safe painting at no extra charge. Removal, if ever needed, requires a licensed NJ asbestos contractor and is quoted separately.</li>
+            <li><strong>After the sale:</strong> items raised by a future buyer’s inspector are not covered, except our own workmanship, which is covered by our warranty.</li>
+            <li>Staging, listing photos and utilities during work.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Investor Plus schedule</h3>
+          <ul class="dots">
+            <li><strong>By Fri 10/16/2026:</strong> scope, price and selections approved</li>
+            <li><strong>By Fri 10/23/2026:</strong> access to measure; appliances and HVAC equipment ordered</li>
+            <li><strong>Fri 10/30/2026:</strong> closing; escrow funded</li>
+            <li><strong>Target substantial completion: Tue 11/24/2026</strong>, ready for listing photos before Thanksgiving</li>
+          </ul>
+          <p class="note" style="margin-top:14px">Note: Target assumes approvals and orders by these dates. Optional additions (especially the tub surround and trim repaint) may add a few days, confirmed when selected.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -578,6 +706,7 @@
           <li>Lead-safe (RRP) work supplies</li>
           <li>Final cleaning</li>
           <li>Project management and coordination of licensed trades</li>
+          <li>Resale CO: house prepared to pass Mount Ephraim’s resale Certificate of Occupancy inspection per the borough’s resale checklist; application filed and re-inspection items handled (borough fee billed at cost)</li>
         </ul>
       </div>
     </div>
@@ -599,7 +728,7 @@
             <li><b>Complete</b><span>Repaint, patch, clean existing oak hardwood</span></li>
             <li><b>Investor</b><span>Plus improved paint treatment and better fixtures</span></li>
             <li><b>Premium</b><span>Plus full trim/door repaint and LED lighting upgrades</span></li>
-            <li><b>Optional</b><span>Hardwood screen-and-recoat (~$400)</span></li>
+            <li><b>Optional</b><span>Hardwood screen-and-recoat (~$500)</span></li>
           </ul>
         </div>
         <div class="card room">
@@ -713,6 +842,7 @@
         <div class="card"><div class="eyebrow">COMPLETE</div><b>2–3 weeks</b><div class="bar"><i style="width:75%"></i></div></div>
         <div class="card"><div class="eyebrow">INVESTOR</div><b>3–4 weeks</b><div class="bar"><i style="width:100%"></i></div></div>
         <div class="card"><div class="eyebrow">PREMIUM</div><b>3–4 weeks</b><div class="bar"><i style="width:100%"></i></div></div>
+        <div class="card"><div class="eyebrow">INVESTOR PLUS</div><b>3–4 weeks</b><div class="bar"><i style="width:100%"></i></div></div>
       </div>
       <div class="clock">
         <div class="card">
@@ -821,7 +951,7 @@
         <li>NJ Home Improvement Contractor registration and the contracting structure must be confirmed before signing.</li>
         <li>NJ-licensed trade contractors must handle applicable HVAC, electrical and plumbing work.</li>
         <li>The final NJ contract should receive appropriate legal review.</li>
-        <li>Mount Ephraim resale / certificate-of-occupancy requirements must be confirmed before closing.</li>
+        <li>Mount Ephraim resale CO checklist reviewed against the scope before work begins.</li>
         <li>Permit and inspection requirements must be confirmed with the Borough or other appropriate authority.</li>
       </ul>
     </div>
@@ -836,8 +966,8 @@
         <p class="lede">Available with any package. Approximate pricing; added only by written approval.</p>
       </div>
       <ul class="opts">
-        <li><span>Stair carpet, both flights</span><span>~$500</span></li>
-        <li><span>Living-room hardwood screen-and-recoat</span><span>~$400</span></li>
+        <li><span>Stair carpet and pad, both flights</span><span>~$650</span></li>
+        <li><span>Living-room hardwood screen-and-recoat (finish included)</span><span>~$500</span></li>
         <li><span>Dead tree removal, if confirmed on the property</span><span>~$800–$1,500</span></li>
       </ul>
     </div>
@@ -883,7 +1013,7 @@
     <div class="wrap">
       <div class="eyebrow">Next step</div>
       <h2>READY TO MOVE FORWARD?</h2>
-      <p class="lede" style="margin-top:14px">Choose the package that fits your investment strategy. We’ll confirm the final scope, verify the outstanding due-diligence items, finalize the written agreement, and establish the project schedule before work begins.</p>
+      <p class="lede" style="margin-top:14px">Choose a package — or Investor Plus with the optional additions you want. We’ll confirm the final scope, verify the outstanding due-diligence items, finalize the written agreement, and establish the project schedule before work begins.</p>
       <div class="cta-btns">
         <button type="button" class="btn gold" data-open-retainer>View Project Retainer</button>
         <a class="btn" href="#packages">View Project Estimate</a>
