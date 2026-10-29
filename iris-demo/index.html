@@ -60,7 +60,7 @@ function voiceSpeak(text){$('agentText').textContent=text;if(!voiceEnabled)retur
 function agent(text){addMessage('IRIS',text);voiceSpeak(text);}
 function buttons(items){let c=$('choices');c.replaceChildren();for(const [value,label] of items){const b=document.createElement('button');b.className='btn';b.textContent=label;b.addEventListener('click',()=>pick(value,label));c.append(b);}}
 function updateClock(){if(!startTime)return;const s=Math.floor((Date.now()-startTime)/1000);$('duration').textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');}
-function hideLive(){ $('liveArea').style.display='none';$('choices').replaceChildren();$('details').classList.add('hidden');$('lastStep').classList.add('hidden');clearInterval(clock);if(false) {}window.IRISNaturalVoice?.cancel();$('orb').classList.remove('talking');}
+function hideLive(){ $('liveArea').style.display='none';$('choices').replaceChildren();$('details').classList.add('hidden');$('lastStep').classList.add('hidden');clearInterval(clock);window.IRISNaturalVoice?.cancel();$('orb').classList.remove('talking');}
 function validRecipient(){let e=sanitizeSingleLine($('recipient').value,180);if(!e)return '';return /^[^\s@,;<>]+@[^\s@,;<>]+\.[^\s@,;<>]+$/.test(e)?e:'';}
 function start(){if(stage!=='ready')return;session={business:sanitizeSingleLine($('business').value,120)||'Sample Service Company',visitor:sanitizeSingleLine($('visitor').value,100)||'Guest',recipient:validRecipient(),topic:'',description:''};$('startArea').style.display='none';$('liveArea').style.display='block';$('finishArea').style.display='none';$('business').disabled=true;$('visitor').disabled=true;$('recipient').disabled=true;$('callStatus').textContent='SIMULATED CALL IN PROGRESS';$('connection').textContent='● Demo connected';stage='choosing';startTime=Date.now();updateClock();clock=setInterval(updateClock,1000);agent('Hello! Thank you for calling '+currentName()+'. This is IRIS, the virtual receptionist demonstration. How may I help you today?');buttons(OPTIONS);}
 function pick(value,label){if(stage!=='choosing')return;session.topic=value;addMessage('Caller',label);$('choices').replaceChildren();$('details').classList.remove('hidden');stage='details';const question=value==='repair'?'Certainly. Please tell me what needs repair so the team can review your request.':value==='estimate'?'Of course. Please describe what you would like an estimate for.':'I can prepare a consultation request. What topic would you like to discuss?';agent(question);$('description').focus();}
@@ -130,7 +130,6 @@ enableButton.addEventListener('click',async()=>{
     const {KokoroTTS}=await import('https://cdn.jsdelivr.net/npm/kokoro-js@1.2.1/+esm');
     const tts=await KokoroTTS.from_pretrained('onnx-community/Kokoro-82M-v1.0-ONNX',{dtype:'q8',device:'wasm'});
     state.tts=tts; state.ready=true;
-    if (false) {}
     enableButton.textContent='✓ Natural Voice Ready';
     statusEl.textContent='Natural voice ready on your CPU. Start the demo to hear it.';
     if(document.getElementById('callStatus').textContent==='SIMULATED CALL IN PROGRESS')
