@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0b1530">
+<title>IRIS x GoodPrice | Development Demonstration</title>
+<meta name="description" content="Development demonstration of GoodPrice Market and Iris. Staged commerce tests and a guided receptionist demo; live payments and conversational phone calls are not yet deployed.">
+<style>
+:root{color-scheme:dark;--bg:#070d1c;--ink:#e8f2ff;--sub:#b4c5dc;--blue:#6784ff;--teal:#83e1d2;--border:#283950}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 85% 0%,#1a2854 0,transparent 38%),var(--bg);color:var(--ink);font:16px/1.58 system-ui,-apple-system,Segoe UI,sans-serif}
+a{color:#a5bbff}a:focus-visible{outline:3px solid #a7e9de;outline-offset:5px}
+.wrap{max-width:1090px;margin:auto;padding:32px 22px 70px}header{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;padding-bottom:23px;border-bottom:1px solid var(--border)}
+.logo{font-weight:850;letter-spacing:.06em}.eyebrow{font-size:12px;font-weight:750;letter-spacing:.14em;color:var(--teal);text-transform:uppercase}.hero{padding:57px 0 35px}
+h1{font-size:clamp(35px,6vw,65px);line-height:1.07;letter-spacing:-.045em;max-width:870px;margin:15px 0 24px}
+h2{font-size:clamp(24px,4vw,34px);line-height:1.2;margin:0 0 10px}p{color:var(--sub)}
+.lead{font-size:clamp(17px,2vw,21px);max-width:790px;margin-bottom:25px}
+.pill{padding:7px 12px;background:#142747;border:1px solid #3a587e;border-radius:99px;font-size:12px;color:#d3e7fd}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.card{border:1px solid #2c4360;border-radius:20px;background:linear-gradient(145deg,#152844 0%,#0f182a 75%);overflow:hidden;display:flex;flex-direction:column}
+.visual{height:180px;display:grid;place-items:center;background:radial-gradient(circle at 30% 20%,#254c9e 0,transparent 55%),#0b1631;padding:20px}
+.visual strong{font-size:clamp(28px,4vw,45px);letter-spacing:-.04em}.visual.good strong{color:#b9c8ff}.visual.iris strong{color:#96f2e4;letter-spacing:.18em}
+.body{padding:25px;flex:1;display:flex;flex-direction:column}
+.body p{flex:1}.cta{display:inline-flex;align-items:center;justify-content:center;padding:14px 16px;background:#97a9ff;color:#0e1730;font-weight:800;text-decoration:none;border-radius:11px;margin-top:9px}
+.cta.teal{background:#83e1d2}.secondary{display:block;text-align:center;font-size:13px;margin-top:12px}
+.tag{font-size:12px;letter-spacing:.09em;color:#b9cee9;text-transform:uppercase;font-weight:700}
+section{margin-top:34px}.steps{border:1px solid var(--border);background:#101b30;border-radius:18px;padding:25px;margin-top:26px}
+ul{color:var(--sub);padding-left:22px}li{margin:8px 0}strong{color:var(--ink)}.divider{border-top:1px solid var(--border);margin-top:25px;padding-top:20px}
+footer{margin-top:55px;font-size:12px;color:#9db2cb}footer a{color:#afc5ff}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.wrap{padding:18px 17px 48px}.hero{padding-top:32px}.visual{height:135px}}
+</style>
+</head><body><main class="wrap">
+<header><div class="logo">FixItRightOnce <span style="color:#8094c2">/ IRIS</span></div><span class="pill">Partner preview · Development stage</span></header>
+<div class="hero"><div class="eyebrow">Two products, one automation platform</div>
+<h1>GoodPrice Market <span style="color:var(--teal)">+</span> Iris AI</h1>
+<p class="lead">A working commerce prototype and the foundation for a conversational digital employee. See what we can demonstrate today—and exactly what we're funding next.</p>
+</div>
+<div class="grid">
+<article class="card">
+ <div class="visual good" aria-hidden="true"><strong>goodprice<span style="color:#fff">.</span>market</strong></div>
+ <div class="body"><div class="tag">Demo 01 · E-commerce</div><h2>GoodPrice Market</h2>
+ <p>Explore the existing Russian-language storefront concept. Separately, the development package contains a FastAPI/SQLite catalog, quote, cart, test-order and admin backend that passed 9 tests on 29 October 2026. <strong>The linked public visual preview does not establish that backend is deployed.</strong></p>
+ <a class="cta" href="https://demo.fixitrightonce.org/gp-qhhzninot1htuzkcx6pexvuh8x7izoot/" target="_blank" rel="noopener noreferrer">Open existing GoodPrice preview ↗</a>
+ <span class="secondary">Real supplier stock and payments are disabled / unverified</span>
+ </div>
+</article>
+<article class="card">
+ <div class="visual iris" aria-hidden="true"><strong>IRIS</strong></div>
+ <div class="body"><div class="tag">Demo 02 · Voice automation</div><h2>Meet Iris</h2>
+ <p>Try the browser-based guided receptionist demonstration with optional female Kokoro neural voice. Generate a sample transcript, request summary and prepared email package. <strong>This page is a scripted demonstration, not a live AI call.</strong></p>
+ <a class="cta teal" href="https://fixitrightonce.org/iris-demo/" target="_blank" rel="noopener noreferrer">Try Iris guided demonstration ↗</a>
+ <span class="secondary">Live conversational phone/conference agent remains in development</span>
+ </div>
+</article>
+</div>
+<section class="steps">
+<div class="eyebrow">What the prototypes prove</div><h2>From concept to software you can inspect</h2>
+<ul>
+<li><strong>GoodPrice staging:</strong> backend catalog, prices, quotes, simulated orders, provenance controls and test management dashboard; nine Python tests passed independently.</li>
+<li><strong>Media:</strong> two short CPU-rendered sample product reels, no paid GPU required.</li>
+<li><strong>Iris:</strong> working guided browser interaction with transcript/document exports; separate real WebRTC conference, access-token gateway and local voice-agent prototype source, with integration tests.</li>
+<li><strong>Not yet live:</strong> authorized supplier feeds, actual payment/fulfillment, genuine multi-person AI conversation, SIP phone calls and automatic follow-up emails.</li>
+</ul>
+<div class="divider"><div class="eyebrow">Proposed funded milestone</div>
+<p>First deliver a secure, independently tested GoodPrice staging release and demonstrate a real Iris live browser conversation. Next validate supplier integrations, regional payments and phone/SIP connectivity. Only after verified readiness and owner approval should production checkout or unattended automation be enabled.</p>
+<p>No customer funds, orders or calls have been processed by these demonstrations.</p></div>
+</section>
+<footer><a href="https://fixitrightonce.org/">← FixItRightOnce homepage</a> · Prepared for a product-development demonstration · 29 October 2026</footer>
+</main></body></html>
